@@ -43,7 +43,7 @@ class Bank {
 
 	void accountInfo(String id) {
 		for (int i = 0; i < accCnt; i++) {
-			if (accList[i].id == id) {
+			if (accList[i].id.equals(id)) {
 				System.out.println(accList[i].info());
 			}
 		}
@@ -51,7 +51,7 @@ class Bank {
 
 	void deposit(String id, int inMoney) {
 		for (int i = 0; i < accCnt; i++) {
-			if (accList[i].id == id) {
+			if (accList[i].id.equals(id)) {
 				accList[i].balance += inMoney;
 			}
 		}
@@ -60,7 +60,7 @@ class Bank {
 	void withdraw(String id, int outMoney) {
 		Account acc = new Account();
 		for (int i = 0; i < accCnt; i++) {
-			if (accList[i].id == id) {
+			if (accList[i].id.equals(id)) {
 				accList[i].balance -= outMoney;
 			}
 		}

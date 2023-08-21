@@ -5,56 +5,56 @@ import java.util.Scanner;
 public class ArrayTest12 {
 
 	public static void main(String[] args) {
-		// ÇÐ»ý 3¸íÀÇ ±¹¾î, ¿µ¾î, ¼öÇÐ Á¡¼ö¸¦ ÀÔ·Â¹Þ¾Æ ÇÐ»ýº° ÃÑÁ¡°ú °ú¸ñº° ÇÕ°è¸¦ ¾Æ·¡¿Í °°ÀÌ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
+		// í•™ìƒ 3ëª…ì˜ êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ìž…ë ¥ë°›ì•„ í•™ìƒë³„ ì´ì ê³¼ ê³¼ëª©ë³„ í•©ê³„ë¥¼ ì•„ëž˜ì™€ ê°™ì´ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì‹œì˜¤.
 
-		// ÀÔ·Â
-		// <1¹øÂ° ÇÐ»ýÀÇ Á¡¼ö>
-		// ±¹¾î:95
-		// ¿µ¾î:100
-		// ¼öÇÐ:88
-		// <2¹øÂ° ÇÐ»ýÀÇ Á¡¼ö>
-		// ±¹¾î:85
-		// ¿µ¾î:60
-		// ¼öÇÐ:93
-		// <3¹øÂ° ÇÐ»ýÀÇ Á¡¼ö>
-		// ±¹¾î:66
-		// ¿µ¾î:99
-		// ¼öÇÐ:88
+		// ìž…ë ¥
+		// <1ë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜>
+		// êµ­ì–´:95
+		// ì˜ì–´:100
+		// ìˆ˜í•™:88
+		// <2ë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜>
+		// êµ­ì–´:85
+		// ì˜ì–´:60
+		// ìˆ˜í•™:93
+		// <3ë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜>
+		// êµ­ì–´:66
+		// ì˜ì–´:99
+		// ìˆ˜í•™:88
 
-		// Ãâ·Â
-		// ±¹¾î ¿µ¾î ¼öÇÐ ÃÑÁ¡
-		// 1¹ø
-		// 2¹ø
-		// 3¹ø
-		// Æò±Õ
+		// ì¶œë ¥
+		// êµ­ì–´ ì˜ì–´ ìˆ˜í•™ ì´ì 
+		// 1ë²ˆ
+		// 2ë²ˆ
+		// 3ë²ˆ
+		// í‰ê· 
 		Scanner sc = new Scanner(System.in);
 		int[][] score = new int[4][4];
-		// ÇÐ»ýµéÀÇ Á¡¼ö ÀÔ·Â¹Þ±â
+		// í•™ìƒë“¤ì˜ ì ìˆ˜ ìž…ë ¥ë°›ê¸°
 		for (int i = 0; i < score.length - 1; i++) {
-			System.out.println(String.format("<%d¹øÂ° ÇÐ»ýÀÇ Á¡¼ö>", i + 1));
-			// ±¹¾î, ¿µ¾î, ¼öÇÐ ¼øÀ¸·Î ÀÔ·Â¹Þ±â (ÇÑ ¹ø¿¡ ÀÔ·ÂÇØ¾ß ÇÏ±â ¶§¹®¿¡ j¿¡ µû¶ó Ãâ·ÂÇÏ´Â °ú¸ñ¸í ¼³Á¤)
+			System.out.println(String.format("<%dë²ˆì§¸ í•™ìƒì˜ ì ìˆ˜>", i + 1));
+			// êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ìˆœìœ¼ë¡œ ìž…ë ¥ë°›ê¸° (í•œ ë²ˆì— ìž…ë ¥í•´ì•¼ í•˜ê¸° ë•Œë¬¸ì— jì— ë”°ë¼ ì¶œë ¥í•˜ëŠ” ê³¼ëª©ëª… ì„¤ì •)
 			for (int j = 0; j < score.length - 1; j++) {
 				if (j == 0)
-					System.out.print("±¹¾î : ");
+					System.out.print("êµ­ì–´ : ");
 				else if (j == 1)
-					System.out.print("¿µ¾î : ");
+					System.out.print("ì˜ì–´ : ");
 				else
-					System.out.print("¼öÇÐ : ");
+					System.out.print("ìˆ˜í•™ : ");
 				score[i][j] = sc.nextInt();
-				score[i][score.length - 1] += score[i][j]; // ÇÐ»ýº° ÇÕ°è ÀúÀå
+				score[i][score.length - 1] += score[i][j]; // í•™ìƒë³„ í•©ê³„ ì €ìž¥
 				score[score.length - 1][j] += score[i][j]; 
-				// °ú¸ñº° Æò±Õ ¸ÕÀú ³ª´²¼­ ÀÔ·ÂÇÒ °æ¿ì ¹Ý¿Ã¸² ¼ö¿¡ µû¶ó¼­ °ªÀÌ º¯µ¿µÉ ¼ö ÀÖÀ½
+				// ê³¼ëª©ë³„ í‰ê·  ë¨¼ì € ë‚˜ëˆ ì„œ ìž…ë ¥í•  ê²½ìš° ë°˜ì˜¬ë¦¼ ìˆ˜ì— ë”°ë¼ì„œ ê°’ì´ ë³€ë™ë  ìˆ˜ ìžˆìŒ
 			}
 		}
 
-		// ÇÐ»ýµéÀÇ Á¡¼ö Ãâ·ÂÇÏ±â
-		System.out.println("\t±¹¾î\t¿µ¾î\t¼öÇÐ\tÃÑÁ¡");
+		// í•™ìƒë“¤ì˜ ì ìˆ˜ ì¶œë ¥í•˜ê¸°
+		System.out.println("\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì ");
 		for (int i = 0; i < score.length; i++) {
-			System.out.print((i + 1) + "¹ø\t");
-			for (int j = 0; j < score.length; j++) {
+			System.out.print((i + 1) + "ë²ˆ\t");
+			for (int j k= 0; j < score.length; j++) {
 				if (i == score[i].length - 1) {
 					if (j == score.length - 1)
-						continue; // ¸Ç ¸¶Áö¸· 0Àº Ãâ·ÂÇÏÁö ¾ÊÀ½
+						continue; // ë§¨ ë§ˆì§€ë§‰ 0ì€ ì¶œë ¥í•˜ì§€ ì•ŠìŒ
 					System.out.print(score[i][j] / 3 + "\t");
 				} else
 					System.out.print(score[i][j] + "\t");
