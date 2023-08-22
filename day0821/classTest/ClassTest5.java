@@ -4,7 +4,12 @@ class Account {
 	String id;
 	String name;
 	int balance;
-	int deposit;
+	// 생성자 만들기
+	Account(String aid, String aname, int money) {
+		id = aid;
+		name = aname;
+		balance = money;
+	}
 
 	String info() {
 		return String.format("계좌번호: %s, 이름: %s, 잔액: %d", id, name, balance);
@@ -28,10 +33,11 @@ class Bank {
 
 	// 호출만 하기 떄문에 리턴타입 X
 	void makeAccount(String id, String name, int money) {
-		Account acc = new Account();
-		acc.id = id;
-		acc.name = name;
-		acc.balance = money;
+		// 생성자 사용하여 한번에 입력
+		Account acc = new Account(id, name, money);
+//		acc.id = id;
+//		acc.name = name;
+//		acc.balance = money;
 		accList[accCnt++] = acc;
 	}
 
@@ -40,30 +46,43 @@ class Bank {
 			System.out.println(accList[i].info());
 		}
 	}
-
-	void accountInfo(String id) {
+	
+	// 공통되는 부분
+	Account searchAccById(String id) {
 		for (int i = 0; i < accCnt; i++) {
 			if (accList[i].id.equals(id)) {
-				System.out.println(accList[i].info());
+				return accList[i];
 			}
 		}
+		return null;
+	}
+	
+
+	void accountInfo(String id) {
+		Account accList = searchAccById(id);
+		if(accList==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return; // null일 때 다시 처음으로 돌아가라.
+		}
+		System.out.println(accList.info());
 	}
 
 	void deposit(String id, int inMoney) {
-		for (int i = 0; i < accCnt; i++) {
-			if (accList[i].id.equals(id)) {
-				accList[i].balance += inMoney;
-			}
+		Account accList = searchAccById(id);
+		if(accList==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return; // null일 때 다시 처음으로 돌아가라.
 		}
+		accList.deposit(inMoney);
 	}
 
 	void withdraw(String id, int outMoney) {
-		Account acc = new Account();
-		for (int i = 0; i < accCnt; i++) {
-			if (accList[i].id.equals(id)) {
-				accList[i].balance -= outMoney;
-			}
+		Account accList = searchAccById(id);
+		if(accList==null) {
+			System.out.println("계좌번호가 틀립니다.");
+			return; // null일 때 다시 처음으로 돌아가라.
 		}
+		accList.deposit(outMoney);
 	}
 }
 
