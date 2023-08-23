@@ -2,8 +2,8 @@ package d0822;
 
 import java.util.Scanner;
 
+import bank.Bank;
 import bankAndEx.Account;
-import bankAndEx.Bank;
 
 class Account2 {
 	String id;

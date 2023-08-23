@@ -7,7 +7,6 @@ class Account {
 	
 	Account(String id, String name, int balance) {
 		// this를 써서 명시 (지역변수와 똑같은 이름을 가지기 때문에)
-		// 지역변수와 로컬변수의 이름이 같은 것이 있다면 this를 명시해줘
 		// 인스턴스 변수임을 명확히 알려주려고 할 때 this를 사용해줘
 		// 클래스 내 생성자를 가진 메소드에서 사용
 		// static 메소드에서 사용 불가

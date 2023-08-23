@@ -1,4 +1,6 @@
-package bankAndEx;
+package bank;
+
+import bankAndEx.Employee;
 
 public class Company {
 
@@ -9,26 +11,49 @@ public class Company {
 		mem[memCnt++] = emp;
 	}
 
-	void setBonus(int id, long bonus) {
-		for(int i=0; i<memCnt; i++) {
-			if(mem[i].id == id) {
-				mem[i].pay += bonus; // 급여에 보너스를 더해줌
+//	void setBonus(int id, long bonus) {
+//		for(int i=0; i<memCnt; i++) {
+//			if(mem[i].getId() == id) {
+////				mem[i]. += bonus; 
+//			}
+//		}
+//	}
+
+	void setBonus(int id, int money) {
+		Employee emp = null;
+		for(int i=0; i<memCnt;i++) {
+			if(mem[i].getId()==id) {
+				emp = mem[i];
+				break;
 			}
 		}
+		if(emp==null) {
+			System.out.println("사번이 틀립니다.");
+			return;
+		}
+		emp.payBonus(money);
 	}
-
+	
 	void allEmployeeInfo() {
 		for (int i = 0; i < memCnt; i++) {
 			System.out.println(mem[i].info());
 		}
 	}
 	
-	long getTotalPay() {
-		long total = 0;
+//	long getTotalPay() {
+//		long total = 0;
+//		for(int i=0; i<memCnt; i++) {
+////			total += mem[i].bonus;
+//		}
+//		return total;
+//	}
+	
+	int getTotalPay() {
+		int tot=0;
 		for(int i=0; i<memCnt; i++) {
-			total += mem[i].pay;
+			tot += mem[i].getPay();
 		}
-		return total;
+		return tot;
 	}
 
 	public static void main(String[] args) {

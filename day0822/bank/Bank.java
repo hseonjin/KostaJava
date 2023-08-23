@@ -1,6 +1,11 @@
-package bankAndEx;
+package bank;
 
 import java.util.Scanner;
+import bankAndEx.Account;
+
+
+//접근 제어자 연습을 위해 패키지 분리
+
 
 public class Bank {
 	Account[] accs = new Account[100];
@@ -23,7 +28,7 @@ public class Bank {
 	// 공통부분
 	Account searchAccById(String id) {
 		for (int i = 0; i < accCnt; i++) {
-			if (accs[i].id.equals(id)) {
+			if (accs[i].getId().equals(id)) {
 				return accs[i];
 			}
 		}
