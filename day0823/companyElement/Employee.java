@@ -32,5 +32,4 @@ public abstract class Employee {
 	
 	// 자식 메서드를 한번에 불러 사용하기 위해 생성만 해줌
 	public abstract int getPay();
-	
 }

@@ -47,15 +47,17 @@ class Point {
 
 class Circle extends Shape {
 	double r;
-
-	Circle(double r) {
-		this(new Point(0, 0), r); // Circle(Point p, double r)를 호출
-	}
-
-	Circle(Point p, double r) {
-		super(p);
+	
+	public Circle(){}
+	
+	public Circle(double r) {
+//		super(p);
 		this.r = r;
 	}
+	
+//	Circle(double r) {
+//		this(new Point(0, 0), r); // Circle(Point p, double r)를 호출
+//	}
 
 	@Override
 	double calcArea() {
@@ -76,16 +78,19 @@ class Circle extends Shape {
 class Rectangle extends Shape {
 	double width; // 폭
 	double height; // 높이
-
-	Rectangle(double width, double height) {
-		this(new Point(0, 0), width, height);
-	}
-
-	Rectangle(Point p, double width, double height) {
-		super(p);
+	
+	public Rectangle(){}
+	
+	public Rectangle(double width, double height) {
+//		super(p);
 		this.width = width;
 		this.height = height;
 	}
+
+//	Rectangle(double width, double height) {
+//		this(new Point(0, 0), width, height);
+//	}
+
 
 	@Override
 	double calcArea() {

@@ -16,5 +16,6 @@
 	<classpathentry kind="src" path="review"/>
 	<classpathentry kind="src" path="day0823"/>
 	<classpathentry kind="src" path="day0824"/>
+	<classpathentry kind="src" path="day0825"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
