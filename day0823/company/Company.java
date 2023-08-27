@@ -2,32 +2,29 @@ package company;
 
 import companyElement.Employee;
 
-public class Company implements BusinessTrip {
-	Employee[] emps = new Employee[100];
-	int empCnt = 0;
+public class Company {
+    Employee[] emps = new Employee[100];
+    int empCnt;
+   public  void enter(Employee emp){ // 자동 업캐스팅 되기 때문에 부모의 자식들은 들어갈 수 있음
+       emps[empCnt++] = emp;
+   }
 
-	public void enter(Employee emp) { // Employee emp=emp1// upcasting
-		emps[empCnt++] = emp;
-	}
-
-	public void allEmployeeInfo() {
-		for (int i = 0; i < empCnt; i++) {
-			System.out.println(emps[i].info());
-		}
-	}
-
-	public int getTotalPay() {
-		int tot=0;
-		for(int i=0; i<empCnt; i++) {
-			tot += emps[i].getPay();
-		}
-		return tot;
-	}
-
-	public void regBusinessTrip(BusinessTrip emp, int day) {
-	}
-
-	@Override
-	public void regBusinessTrip() {		
-	}
+   // 전체 사원 조회
+   public  void allEmployeeInfo(){
+       for(int i = 0; i<empCnt; i++){
+           System.out.println(emps[i].info());
+       }
+   }
+   // 총 급여
+   public  int getTotalPay(){
+       int total = 0;
+       for(int i = 0; i<empCnt; i++){
+           total += emps[i].getPay();
+       }
+       return total;
+   }
+   // 출장을 넣어주는 기능
+   public void regBusinessTrip(BusinessTrip emp, int day){
+       emp.regBusinessTrip(day);
+   }
 }
