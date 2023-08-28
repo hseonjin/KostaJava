@@ -1,4 +1,4 @@
-package polymorphism;
+package etc;
 
 // final 변수는 생성자에서 초기화하거나, 변수 선언시 초기화해준다
 

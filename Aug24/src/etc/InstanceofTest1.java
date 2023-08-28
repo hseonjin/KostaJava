@@ -1,4 +1,20 @@
-package polymorphism;
+package etc;
+
+
+class Base {
+	int x=1;
+	void method() {
+		System.out.println("Base method");
+	}
+}
+
+class Derived extends Base {
+	int x=2;
+	int y=3;
+	void method() { // overriding
+		System.out.println("Derived method");
+	}
+}
 
 public class InstanceofTest1 {
 
