@@ -1,4 +1,4 @@
-package extendsTest;
+package extendsPac;
 
 class Person {
 	int age;

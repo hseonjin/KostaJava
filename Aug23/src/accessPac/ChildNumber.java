@@ -1,4 +1,4 @@
-package extendsTest;
+package accessPac;
 import pac.Number;
 
 public class ChildNumber extends Number {

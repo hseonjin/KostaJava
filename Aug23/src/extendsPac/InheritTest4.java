@@ -1,4 +1,4 @@
-package extendsTest;
+package extendsPac;
 
 class A {
 //	A() {} // 1. B에 에러 발생 방지를 위해 기본생성자 작성

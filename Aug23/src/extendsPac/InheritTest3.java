@@ -1,4 +1,4 @@
-package extendsTest;
+package extendsPac;
 
 class Parent {
 //	Parent() {} // 기본생성자가 있어야 자식 객체에 에러가 발생하지 않음

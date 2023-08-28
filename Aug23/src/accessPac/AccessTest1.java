@@ -1,4 +1,4 @@
-package extendsTest;
+package accessPac;
 import pac.Number;
 //class Number {
 //	// private

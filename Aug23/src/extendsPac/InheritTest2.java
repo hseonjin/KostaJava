@@ -1,4 +1,4 @@
-package extendsTest;
+package extendsPac;
 
 class Base {
 	int bnum;

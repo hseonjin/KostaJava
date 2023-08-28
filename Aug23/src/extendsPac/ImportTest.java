@@ -1,4 +1,4 @@
-package extendsTest;
+package extendsPac;
 
 import java.sql.Date;
 
