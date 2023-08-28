@@ -1,9 +1,9 @@
-package continueTest;
+package continuePac;
 
 public class ContinueTest2 {
 
 	public static void main(String[] args) {
-		// 4ÀÇ ¹è¼öÀÌ°Å³ª 7ÀÇ ¹è¼öÀÎ °æ¿ì ´õÇÏÁö ¾Ê±â
+		// 4ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì°Å³ï¿½ 7ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½
 		int sum = 0;
 		for (int i = 1; i <= 100; i++) {
 			if (!(i % 4 == 0 || i % 7 == 0))

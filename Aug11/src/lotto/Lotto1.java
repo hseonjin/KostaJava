@@ -1,29 +1,29 @@
-package arrayTest;
+package lotto;
 
 public class Lotto1 {
 
 	public static void main(String[] args) {
-		// int type 45°³ ¹è¿­ ¼±¾ð
+		// int type 45ï¿½ï¿½ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½
 		int[] ball = new int[45];
 
-		// ¹è¿­¿¡ 1~45±îÁöÀÇ °ªÀ¸·Î ÃÊ±âÈ­
+		// ï¿½è¿­ï¿½ï¿½ 1~45ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 		for (int i = 0; i < ball.length; i++) {
 			ball[i] = i + 1;
 		}
 
-		// 1000¹ø ¹Ýº¹
+		// 1000ï¿½ï¿½ ï¿½Ýºï¿½
 		for (int i = 0; i <= 1000; i++) {
-			// 0~44 Áß µÎ °³ÀÇ ÀÓÀÇÀÇ Á¤¼ö¸¦ ±¸ÇØ º¯¼ö¿¡ ´ã±â
+			// 0~44 ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			int idx1 = (int) (Math.random() * 45);
 			int idx2 = (int) (Math.random() * 45);
 
-			// idx1, idx2 °ª ¹Ù²Ù±â
+			// idx1, idx2 ï¿½ï¿½ ï¿½Ù²Ù±ï¿½
 			int temp = ball[idx1];
 			ball[idx1] = ball[idx2];
 			ball[idx2] = temp;
 		}
 
-		// ¹è¿­ Áß ¼ýÀÚ 6°³ »Ì±â
+		// ï¿½è¿­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 6ï¿½ï¿½ ï¿½Ì±ï¿½
 		for (int i = 0; i < 6; i++) {
 			System.out.println(ball[i] + ",");
 		}

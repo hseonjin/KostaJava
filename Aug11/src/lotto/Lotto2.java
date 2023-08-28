@@ -1,18 +1,18 @@
-package arrayTest;
+package lotto;
 
 public class Lotto2 {
 
 	public static void main(String[] args) {
-		// ¼ýÀÚ 6°³¸¦ »Ì´Âµ¥ ¾Õ¿¡ ³ª¿Ô´ø ¼ýÀÚ°¡ »ÌÈ÷¸é »õ·Î »Ì±â
+		// ï¿½ï¿½ï¿½ï¿½ 6ï¿½ï¿½ï¿½ï¿½ ï¿½Ì´Âµï¿½ ï¿½Õ¿ï¿½ ï¿½ï¿½ï¿½Ô´ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì±ï¿½
 		int[] ball = new int[6];
 		int cnt = 0;
 		boolean same = false;
 
 		while (true) {
-			// 1~45 Áß ·£´ý°ª °¡Á®¿À±â
+			// 1~45 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int rand = (int) (Math.random() * 45) + 1;
 
-			// ball ¹è¿­¿¡¼­ rand¿Í °°Àº °ªÀÌ ÀÖ´ÂÁö È®ÀÎ
+			// ball ï¿½è¿­ï¿½ï¿½ï¿½ï¿½ randï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 			for (int i = 0; i < cnt; i++) {
 				if (ball[i] == rand) {
 					same = true;

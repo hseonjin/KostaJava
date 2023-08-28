@@ -1,4 +1,4 @@
-package continueTest;
+package continuePac;
 
 public class ContinueTest1 {
 
