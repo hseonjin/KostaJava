@@ -1,5 +1,6 @@
 package acc;
 
+import acc.Account;
 import exc.BankException;
 
 public class SpecialAccount extends Account {
@@ -35,7 +36,7 @@ public class SpecialAccount extends Account {
 	}
 	
 	@Override
-	public String info() {
-		return super.info()+",등급:"+grade;
+	public String toString() {
+		return super.toString()+",등급:"+grade;
 	}
 }
