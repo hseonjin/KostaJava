@@ -11,7 +11,7 @@ public class Company {
 	// 전체 사원 조회
 	public void allEmployeeInfo() {
 		for (int i = 0; i < empCnt; i++) {
-			System.out.println(emps[i].info());
+			System.out.println(emps[i].toString());
 		}
 	}
 
@@ -26,6 +26,6 @@ public class Company {
 
 	// 출장을 넣어주는 기능
 	public void regBusinessTrip(BusinessTrip emp, int day) {
-		emp.reBusinessTrip(day);
+		emp.regBusinessTrip(day);
 	}
 }

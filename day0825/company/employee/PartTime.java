@@ -3,6 +3,7 @@ package company.employee;
 public class PartTime extends Employee implements BusinessTrip{
     int time; // 근무 시간
     int payPerTime; // 시간 당 급여
+    
     public int getTime() {
         return time;
     }
@@ -30,14 +31,19 @@ public class PartTime extends Employee implements BusinessTrip{
         return getTime()*getPayPerTime();
     }
 
+//    @Override
+//    public String info(){
+//        return super.info() + ", 급여 : " + getPay();
+//    }
+    
     @Override
-    public String info(){
-        return super.info() + ", 급여 : " + getPay();
+    public String toString() {
+    	return super.toString() + ", \t급여 : " + getPay();
     }
 
     // 인터페이스에 있는 메서드 오버라이딩 후 출장시간(24시간)*payPerTime을 인센티브로 지급
     @Override
-    public void reBusinessTrip(int n) {
-        setTime(getTime()+(n*24));
+    public void regBusinessTrip(int day) {
+        setTime(getTime()+(day*24));
     }
 }

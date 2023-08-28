@@ -1,5 +1,5 @@
 package company;
 
 public interface BusinessTrip {
-	void regBusinessTrip();
+	public void regBusinessTrip(int n);
 }

@@ -26,7 +26,7 @@ public class Sales extends Permanent implements BusinessTrip {
 
 	// 인터페이스에 있는 메서드 오버라이딩 후 하루당 300,000원을 인센티브로 지급
 	@Override
-	public void reBusinessTrip(int n) {
-		setIncentive(getIncentive() + 300000 * n);
+	public void regBusinessTrip(int day) {
+		setIncentive(getIncentive() + 300000 * day);
 	}
 }

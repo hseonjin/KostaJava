@@ -36,5 +36,4 @@ public class PartTime extends Employee {
 		return super.info() + ", 급여: " + getPay();
 	}
 	
-	
 }

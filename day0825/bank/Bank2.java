@@ -1,9 +1,10 @@
 package bank;
 
-
 import java.util.Scanner;
 
 import bank.Bank;
+import bank.exc.BankError;
+import bank.exc.BankException;
 import bankAndEx.Account;
 
 class Account2 {
@@ -38,8 +39,8 @@ public class Bank2 {
 	int accCnt;
 	Scanner sc = new Scanner(System.in);
 
-	int menu() { // sel이 int타입이기 때문에 반환타입도 int
-		int sel;
+	int menu() throws BankException { // throws Exception을 통해 main() 메소드에서 예외 처리를 해줄 것
+//		int sel = 0;
 		System.out.println("[코스타 은행]");
 		System.out.println("1. 계좌개설");
 		System.out.println("2. 입금");
@@ -48,9 +49,18 @@ public class Bank2 {
 		System.out.println("5. 전체계좌조회");
 		System.out.println("0. 종료");
 		System.out.println("선택 >> ");
-		return Integer.parseInt(sc.nextLine());
+		
+		int sel = Integer.parseInt(sc.nextLine());
+		if (!(sel >= 0 && sel <= 5)) {
+			throw new BankException("메뉴오류", BankError.MENU);
+		}
+
+		return sel;
+
+//		return Integer.parseInt(sc.nextLine());
+
 	}
-	
+
 	// 추가되는 부분 - Special Account
 	void selAccMenu() {
 		System.out.println("[계좌개설]");
@@ -58,8 +68,10 @@ public class Bank2 {
 		System.out.println("2. 특수계좌");
 		System.out.print("선택>>");
 		int sel = Integer.parseInt(sc.nextLine());
-		if(sel==1) makeAccount();
-		else makeSpecialAccount();
+		if (sel == 1)
+			makeAccount();
+		else
+			makeSpecialAccount();
 	}
 
 	// 계좌개설
@@ -78,7 +90,7 @@ public class Bank2 {
 		int money = Integer.parseInt(sc.nextLine());
 		accs[accCnt++] = new Account2(id, name, money);
 	}
-	
+
 	// 특수계좌개설
 	void makeSpecialAccount() {
 		System.out.println("[특수계좌 개설]");
@@ -97,7 +109,7 @@ public class Bank2 {
 		String grade = sc.nextLine();
 		accs[accCnt++] = new SpecialAccount(id, name, money, grade);
 	}
-	
+
 	// 공통부분 (id찾기)
 	Account2 searchAccById(String id) {
 		for (int i = 0; i < accCnt; i++) {
@@ -120,8 +132,8 @@ public class Bank2 {
 		}
 		System.out.println("입금액: ");
 		int money = Integer.parseInt(sc.nextLine());
-		
-		acc.deposit(money); 
+
+		acc.deposit(money);
 		// overriding 해두었기 때문에 downcasting 하지 않아도 됨
 		// 만약 특수계좌만 취급하는 경우에는 downcasting이 필요함
 	}
@@ -160,26 +172,38 @@ public class Bank2 {
 			System.out.println(accs[i].info());
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		// bank 클래스 내에 메서드 작성하기
 		Bank2 bank = new Bank2();
 		int sel;
-		
-		while(true) {
-			sel = bank.menu();
-			
-			if(sel == 0) break;
-			
-			switch(sel) {
-			case 1: bank.selAccMenu(); break;
-			case 2: bank.deposit(); break;
-			case 3: bank.withdraw(); break;
-			case 4: bank.accountInfo(); break;
-			case 5: bank.allAccountInfo(); break;
-			}
-		}
-		
-	}
 
+		while (true) {
+			try {
+				sel = bank.menu();
+				if (sel == 0)
+					break;
+				switch (sel) {
+				case 1:
+					bank.selAccMenu();
+					break;
+				case 2:
+					bank.deposit();
+					break;
+				case 3:
+					bank.withdraw();
+					break;
+				case 4:
+					bank.accountInfo();
+					break;
+				case 5:
+					bank.allAccountInfo();
+					break;
+				}
+			} catch (Exception e) {
+				System.out.println("입력 형식이 맞지 않습니다. 다시 선택하세요.");
+			}
+
+		}
+	}
 }

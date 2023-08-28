@@ -25,7 +25,11 @@ public abstract class Employee {
         this.name = name;
     }
 
-    public String info(){
-        return "사번 : " + id + ",\t이름 : " + name;
+//    public String info(){
+//        return "사번 : " + id + ",\t이름 : " + name;
+//    }
+    @Override
+    public String toString() {
+    	return "사번 : " + id + ",\t이름 : " + name;
     }
 }

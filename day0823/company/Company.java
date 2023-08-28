@@ -25,6 +25,6 @@ public class Company {
    }
    // 출장을 넣어주는 기능
    public void regBusinessTrip(BusinessTrip emp, int day){
-       emp.regBusinessTrip(day);
+	   emp.regBusinessTrip(day);
    }
 }

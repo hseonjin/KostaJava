@@ -3,7 +3,7 @@ package bank;
 public class SpecialAccount extends Account2{
 	String grade;
 	
-	SpecialAccount(String id, String name, int money, String grade) {
+	public SpecialAccount(String id, String name, int money, String grade) {
 		super(id, name, money);
 		this.grade = grade;
 	}

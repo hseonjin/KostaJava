@@ -19,8 +19,13 @@ public class Permanent extends Employee{
     public int getPay(){ 
         return getSalary();
     }
+//    @Override
+//    public String info(){
+//        return super.info() + ", 급여 : " + getPay();
+//    }
+
     @Override
-    public String info(){
-        return super.info() + ", 급여 : " + getPay();
+    public String toString() {
+    	return super.toString() + ", 급여 : " + getPay();
     }
 }
