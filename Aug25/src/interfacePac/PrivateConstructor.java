@@ -1,4 +1,4 @@
-package interfaceTest;
+package interfacePac;
 
 class MyArray { // singleton Object
 	private int[] arr = new int[10];

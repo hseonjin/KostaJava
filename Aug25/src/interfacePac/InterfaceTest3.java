@@ -1,4 +1,5 @@
-package interfaceTest;
+package interfacePac;
+
 
 interface IClick {
 	void iclick();

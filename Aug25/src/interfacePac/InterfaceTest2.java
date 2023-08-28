@@ -1,4 +1,5 @@
-package interfaceTest;
+package interfacePac;
+
 
 class MyButton {
 	String title;

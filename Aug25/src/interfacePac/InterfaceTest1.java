@@ -1,4 +1,5 @@
-package interfaceTest;
+package interfacePac;
+
 
 interface Fightable {
 	void fight();
