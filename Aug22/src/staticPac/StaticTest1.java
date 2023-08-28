@@ -1,4 +1,4 @@
-package staticTest;
+package staticPac;
 
 class Number {
 	int inum; // 인스턴스 변수

@@ -1,4 +1,4 @@
-package constructorTest;
+package constructorPac;
 
 class Person2 {
 	int age;
