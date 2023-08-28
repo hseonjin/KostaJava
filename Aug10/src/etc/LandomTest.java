@@ -1,9 +1,9 @@
-package ex;
+package etc;
 
 public class LandomTest {
 
 	public static void main(String[] args) {
-		// 1~45±îÁö ¼ýÀÚ Áß ·£´ýÀ¸·Î »Ì±â
+		// 1~45ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì±ï¿½
 		// 0.0 <= Math.random() < 1.0
 		// 0.0 * 45 <= Math.random() * 45 < 1.0 * 45
 		// 0.0 <= (int)(Math.random() * 45) < 45.0
