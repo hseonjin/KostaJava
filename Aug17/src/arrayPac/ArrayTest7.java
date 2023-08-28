@@ -1,22 +1,22 @@
-package arrayTest;
+package arrayPac;
 
 public class ArrayTest7 {
 
 	public static void main(String[] args) {
-		// ÇàÀÇ ÃÑÇÕ°è ±¸ÇÏ±â
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ°ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
 		int[][] narr = { { 10, 20, 30, 40 }, { 50, 60, 70, 80 }, { 90, 100, 110, 120 } };
 
 		int[][] result = new int[narr.length + 1][narr[0].length + 1];
 
-		for (int i = 0; i < narr.length; i++) { // ÇàÀÇ °³¼ö¸¸Å­ ¹Ýº¹
-			for (int j = 0; j < narr[i].length; j++) { // ¿­ÀÇ °³¼ö¸¸Å­ ¹Ýº¹
-				// ±âÁ¸ ¹è¿­ º¹»ç
+		for (int i = 0; i < narr.length; i++) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ ï¿½Ýºï¿½
+			for (int j = 0; j < narr[i].length; j++) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ ï¿½Ýºï¿½
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½
 				result[i][j] = narr[i][j];
-				// ¿­ ÇÕ°è
+				// ï¿½ï¿½ ï¿½Õ°ï¿½
 				result[i][result[i].length - 1] += narr[i][j];
-				// Çà ÇÕ°è
+				// ï¿½ï¿½ ï¿½Õ°ï¿½
 				result[narr.length][j] += narr[i][j];
-				// Çà/¿­ ÃÑÇÕ°è
+				// ï¿½ï¿½/ï¿½ï¿½ ï¿½ï¿½ï¿½Õ°ï¿½
 				result[narr.length][narr[i].length] += narr[i][j];
 			}
 		}

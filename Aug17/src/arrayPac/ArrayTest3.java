@@ -1,4 +1,4 @@
-package arrayTest;
+package arrayPac;
 
 public class ArrayTest3 {
 
@@ -31,6 +31,6 @@ public class ArrayTest3 {
 	}
 }
 
-// Ãâ·Â°á°ú
+// ï¿½ï¿½Â°ï¿½ï¿½
 // hex: CAFE2023
 // binary: 11001010111111100010000000100011

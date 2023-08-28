@@ -1,4 +1,4 @@
-package arrayTest;
+package arrayPac;
 
 public class ArrayTest4 {
 
@@ -27,6 +27,6 @@ public class ArrayTest4 {
 
 }
 
-// Ãâ·Â°á°ú
+// ï¿½ï¿½Â°ï¿½ï¿½
 // hex: 13A0C
 // binary: 00010011101000001100

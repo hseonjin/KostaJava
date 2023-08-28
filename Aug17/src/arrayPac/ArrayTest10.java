@@ -1,11 +1,11 @@
-package arrayTest;
+package arrayPac;
 
 public class ArrayTest10 {
 
 	public static void main(String[] args) {
 		// deep copy2
 		int[] sarr = { 1, 2, 3, 4, 5 };
-		int[] darr = sarr.clone(); // ¹è¿­À» »ý¼ºÇÏ¿© °ªÀ» º¹»çÇÏ¿© ¸®ÅÏÇØÁÜ(º¹Á¦)
+		int[] darr = sarr.clone(); // ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)
 		sarr[0] = 100;
 
 		for (int i = 0; i < sarr.length; i++) {
