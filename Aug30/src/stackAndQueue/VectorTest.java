@@ -32,10 +32,10 @@ public class VectorTest {
 		}
 		
 		ListIterator<Integer> lit = list.listIterator();
-		while(lit.hasNext()) {
+		while(lit.hasNext()) { // 앞에서 뒤로, 오름
 			System.out.println(lit.next());
 		}
-		while(lit.hasPrevious() ) {
+		while(lit.hasPrevious() ) { // 뒤에서 앞으로, 내림
 			System.out.println(lit.previous());
 		}
 	}
