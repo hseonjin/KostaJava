@@ -48,14 +48,16 @@ class Student6 implements Comparable<Student6> {
 
 class Ex06 {
 	static int getGroupCount(TreeSet<Student6> tset, int from, int to) {
-		return tset.subSet(new Student6("", 0,0,from,from,from), new Student6("", 0, 0, to, to, to)).size(); // 범위
+		// SortedSet<Student6> ss =tset.subSet(new Student6("", 0,0,from,from,from), new Student6("", 0, 0, to, to, to));
+		// return ss.size();
+		return tset.subSet(new Student6("", 0,0,from,from,from), new Student6("", 0, 0, to, to, to)).size(); // 범위에 해당하는 객체 수 리턴
 
 	}
 
 	public static void main(String[] args) {
 		TreeSet<Student6> set = new TreeSet<>(new Comparator<Student6> (){
 			public int compare(Student6 o1, Student6 o2) {
-				// 정석 방법
+				// 정석 방법-Average를 통해 비교하려면 사용하기
 				// if(o1.getAverage() > o2.getAverage()) return 1;
 				// else if(o1.getAverage() < o2.getAverage()) return -1;
 				// else return 0;

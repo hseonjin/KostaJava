@@ -32,7 +32,7 @@ class Ex01{
 		
 		// 합집합
 		hap.addAll(list1); 
-		hap.removeAll(kyo);
+		hap.removeAll(list2);
 		hap.addAll(list2); 
 		
 		
