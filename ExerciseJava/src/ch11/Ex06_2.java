@@ -25,6 +25,9 @@ class Human implements Comparable<Human>{
 		return id.compareTo(o.id);
 	}
 	
+//	int ret = name.compareTo(o.name);
+//	if(ret==0) { ret = o.age - age;}
+	
 
 }
 
