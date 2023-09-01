@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 
-
 class Student7 {
 	String name;
 	int ban;
@@ -14,6 +13,7 @@ class Student7 {
 	int kor;
 	int eng;
 	int math;
+	
 
 	Student7(String name, int ban, int no, int kor, int eng, int math) {
 		this.name = name;

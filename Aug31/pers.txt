@@ -1,0 +1,4 @@
+hong,20,173.5,falseN
+koko,35,177.5,falseN
+soso,40,183.4,falseN
+nana,20,170.3,trueY
