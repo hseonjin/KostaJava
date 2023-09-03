@@ -16,14 +16,17 @@ public class Company {
 		// 모든 객체의 기본 정보를 출력한다. ( for문 이용 , keySet() 이용 )
 		System.out.println("name\tdepartment\tsalary");
 		System.out.println("------------------------------");
+
 		for(Employee emp: map.values()) {
 			System.out.println(emp.toString());
 		}
-		System.out.println();
+		
 
 		// 모든 객체의 인센티브 100씩 지급한다.
+		System.out.println();
 		System.out.println("인센티브100지급");
-
+		System.out.println();
+		
 		for(Employee emp: map.values()) {
 			if(emp instanceof Secretary) {
 				Secretary secretary = (Secretary) emp;

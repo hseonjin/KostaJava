@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="ch09.SutdaCard"/>
     <fullyQualifiedTypeName name="javax.management.StringValueExp"/>
     <fullyQualifiedTypeName name="java.io.DataOutput"/>
@@ -28,7 +27,6 @@
     <fullyQualifiedTypeName name="java.io.FileReader"/>
     <fullyQualifiedTypeName name="stringtokenizer.StringTokenizerTest"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.System.Logger"/>
     <fullyQualifiedTypeName name="java.io.ObjectInput"/>
     <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
@@ -48,6 +46,15 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="com.test05.Employee"/>
-    <fullyQualifiedTypeName name="com.test05.Secretary"/>
     <fullyQualifiedTypeName name="com.test05.Sales"/>
+    <fullyQualifiedTypeName name="com.test05.Secretary"/>
+    <fullyQualifiedTypeName name="com.test06.biz.IVendingMachineBiz"/>
+    <fullyQualifiedTypeName name="com.test06.entity.Drink"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.test06.VendingMachineTest"/>
+    <fullyQualifiedTypeName name="com.test06.biz.VendingMachineBiz"/>
+    <fullyQualifiedTypeName name="com.test06.entity.Coffee"/>
+    <fullyQualifiedTypeName name="com.test06.entity.Coke"/>
+    <fullyQualifiedTypeName name="com.test06.entity.Juice"/>
 </qualifiedTypeNameHistroy>
