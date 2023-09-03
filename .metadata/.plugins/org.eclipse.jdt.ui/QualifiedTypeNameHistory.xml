@@ -48,4 +48,6 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="com.test05.Employee"/>
+    <fullyQualifiedTypeName name="com.test05.Secretary"/>
+    <fullyQualifiedTypeName name="com.test05.Sales"/>
 </qualifiedTypeNameHistroy>
