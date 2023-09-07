@@ -1,0 +1,68 @@
+-- 날짜 함수
+-- curdate : system의 현재 날짜 출력
+SELECT CURDATE();
+SELECT CURRENT_DATE();
+SELECT CURDATE()+1;
+
+-- adddate, date_add : 연,월,일 더하기
+SELECT ADDDATE(CURDATE(), INTERVAL 1 DAY);
+SELECT ADDDATE(CURDATE(), INTERVAL 1 MONTH);
+SELECT ADDDATE(CURDATE(), INTERVAL -1 YEAR);
+SELECT DATE_ADD(CURDATE(), INTERVAL -1 YEAR);
+
+-- emp 테이블에서 각 직원의 입사일과 10년 기념일을 조회
+SELECT hiredate, ADDDATE(hiredate, INTERVAL 10 YEAR) 10주년 FROM emp;
+SELECT hiredate, ADDDATE(hiredate, 2) FROM emp; -- interval과 단위를 빼면 day가 default
+
+-- curtime, current_time : system의 현재 시각
+SELECT CURTIME(), CURRENT_TIME();
+SELECT CURTIME(), ADDTIME(CURTIME(), '1:10:5'); -- add 1hour 10minite 5second
+
+-- now() : 현재 날짜와 시간
+SELECT NOW();
+SELECT NOW(), ADDTIME(NOW(), '2 1:10:5'); -- add 2day 1hour 10minite 5second
+
+-- datediff : 날짜 간격 계산
+SELECT hiredate, DATEDIFF(CURDATE(), hirdate) FROM emp; 
+SELECT DATEDIFF(CURDATE(), '1999-05-24') 일수 FROM emp;
+
+-- date_format
+SELECT DATE_FORMAT('1999-05-24', '%y %m %d'); -- 99 05 24
+SELECT DATE_FORMAT('1999-05-24', '%Y %M %D'); -- 1999 May 24th
+SELECT DATE_FORMAT(NOW(), "%M %m %D %H %i %s %a"); -- September 09 5th 10 02 28
+
+-- date_sub : 날짜 빼기
+SELECT CURDATE(), DATE_SUB(CURDATE(), INTERVAL 10 DAY);
+SELECT CURDATE(), ADDDATE(CURDATE(), INTERVAL -10 DAY);
+
+-- year, month, day 날짜에서 년/월/일 추출
+-- HOUR, MINUTE, SECOND : date에서 시/분/초 추출
+-- WEEKDAY : date에서 요일에 해당하는 숫자 반환 (월=0)
+SELECT YEAR(hiredate), MONTH(hiredate), DAY(hiredate) FROM emp;
+SELECT HOUR(NOW()), MINUTE(NOW()), SECOND(NOW());
+SELECT WEEKDAY(NOW()); 
+
+-- dayofmonth
+SELECT DAY(hiredate) FROM emp;
+SELECT DAYOFMONTH(hiredate) FROM emp;
+
+-- DAYNAME(문자), DAYOFWEEK(숫지, 일요일=1) : date에서 요일 추출;
+SELECT DAYNAME(hiredate), DAYOFWEEK(hiredate) FROM emp;
+
+-- EXTRACT
+SELECT CURDATE(), EXTRACT(MONTH FROM CURDATE()) AS MONTH;
+SELECT CURDATE(), EXTRACT(YEAR FROM CURDATE()) AS YEAR;
+SELECT CURDATE(), EXTRACT(DAY FROM CURDATE()) AS DAY;
+SELECT CURDATE(), EXTRACT(WEEK FROM CURDATE()) AS WEEK;
+SELECT CURDATE(), EXTRACT(QUARTER FROM CURDATE()) AS QUARTER;
+SELECT CURDATE(), EXTRACT(YEAR_MONTH FROM CURDATE()) AS "YEAR_MONTH";
+SELECT NOW(), EXTRACT(HOUR FROM CURDATE()) AS HOUR;
+SELECT NOW(), EXTRACT(MINUTE FROM CURDATE()) AS MINUTE;
+SELECT NOW(), EXTRACT(SECOND FROM CURDATE()) AS SECOND;
+
+-- TIME_TO_SEC : 시간을 초로 변환
+SELECT CURTIME(), TIME_TO_SEC(CURTIME());
+
+-- TIMEDIFF : 시간의 차이
+SELECT CURTIME(), TIMEDIFF(CURTIME(), '08:48:27');
+SELECT TIME_TO_SEC(TIMEDIFF(CURTIME(), '08:48:27'));
