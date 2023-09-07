@@ -36,14 +36,12 @@
     <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="acc.Account"/>
     <fullyQualifiedTypeName name="com.test02.Student"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.test04.Plane"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="com.test05.Employee"/>
     <fullyQualifiedTypeName name="com.test05.Sales"/>
@@ -57,4 +55,8 @@
     <fullyQualifiedTypeName name="com.test06.entity.Coffee"/>
     <fullyQualifiedTypeName name="com.test06.entity.Coke"/>
     <fullyQualifiedTypeName name="com.test06.entity.Juice"/>
+    <fullyQualifiedTypeName name="java.util.TreeMap"/>
+    <fullyQualifiedTypeName name="acc.Account"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
 </qualifiedTypeNameHistroy>
