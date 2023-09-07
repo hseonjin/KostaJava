@@ -14,7 +14,7 @@
 -- SELECT
 
 CREATE DATABASE kotest; -- db 생성
-DROP DATABASE testko; -- db 삭제
+DROP DATABASE kotest; -- db 삭제
 
 CREATE TABLE person(
 	NAME VARCHAR(100) NOT NULL,
