@@ -7,7 +7,7 @@ public class AccountService {
 	public void accountInfo(String id) {
 		// Connection을 호출한 곳에서 close() 해주기~
 		Connection conn = DAO.getConnection();
-		
+	
 		// select (DAO의 accountInfo 메소드 활용)
 		Account acc = DAO.selectAccount(conn, id);
 		if(acc == null) {

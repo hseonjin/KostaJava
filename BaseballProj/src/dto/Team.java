@@ -6,6 +6,7 @@ public class Team {
 	String local;
 	
 	public Team() {};
+	
 	public Team(Integer num, String name, String local) {
 		this.num = num;
 		this.name = name;
@@ -32,6 +33,6 @@ public class Team {
 	}
 	@Override
 	public String toString() {
-		return String.format("팀번호: %d, 팀명: %s, 연고지: %s, 소속팀: %s", num, name, local);
+		return String.format("팀번호: %d, 팀명: %s, 연고지: %s", num, name, local);
 	}
 }
