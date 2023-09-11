@@ -48,7 +48,7 @@ public class TeamDAO {
 		PreparedStatement pstmt = null;
 		String sql = "insert into team (name, local) values(?, ?)"; // name, local
 		try {
-			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt = conn.prepareStatement(sql); // Statement.RETURN_GENERATED_KEYS (쓰지 않아도 되네?)
 			pstmt.setString(1, team.getName());
 			pstmt.setString(2, team.getLocal());
 			cnt = pstmt.executeUpdate();

@@ -50,7 +50,7 @@ public class PlayerDAO {
 		String sql = "insert into player (name, backnum, teamnum) "
 				+ "VALUE (?, ?, (select num from team where name = ?))";
 		try {
-			pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, player.getName());
 			pstmt.setInt(2, player.getBacknum());
 			pstmt.setString(3, player.getTeamname());

@@ -31,7 +31,7 @@ public class BaseballService {
 		TeamDAO.close(conn);
 	}
 
-// 특정 팀 조회
+	// 특정 팀 조회
 	public void getTeam() {
 		Connection conn = TeamDAO.getConnection();
 		System.out.println("[팀 조회]");
@@ -57,6 +57,17 @@ public class BaseballService {
 		}
 		TeamDAO.close(conn);
 	}
+	
+// 팀 목록조회
+	public void getShortTeamList() {
+		Connection conn = TeamDAO.getConnection();
+		System.out.println("[전체 팀 조회]");
+		List<Team> teamList = TeamDAO.selectTeamList(conn);
+		for (Team team : teamList) {
+			System.out.println(team.shortString());
+		}
+		TeamDAO.close(conn);
+	}
 
 // 선수 등록 -> 이름 중복될 수 있어서 if문 안 씀
 	public void regPlayer() {
@@ -68,7 +79,7 @@ public class BaseballService {
 		System.out.println("등번호: ");
 		Integer backnum = Integer.parseInt(sc.nextLine());
 		System.out.println("<팀 선택>");
-		getTeamList(); // 팀 목록 나타내기
+		getShortTeamList(); // 팀 목록 나타내기(번호: 팀명)
 		System.out.println("팀 명 >> ");
 		String teamname = sc.nextLine();
 		int cnt = PlayerDAO.insertPlayer(conn, new Player(null, name, backnum, null, teamname));
@@ -162,5 +173,4 @@ public class BaseballService {
 		System.out.println("선택 >> ");
 		return Integer.parseInt(sc.nextLine());
 	}
-
 }
