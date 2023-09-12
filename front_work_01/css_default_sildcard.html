@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {color: red;}
+        h1 {color: paleturquoise;}
+        p {color:blueviolet;}
+        #header {
+            width: 800px; 
+            margin: 0 auto;
+        }
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden; /* 내용이 넘치면 잘라내고, 잘라낸 부분은 보이지 않는다*/
+        }
+        #aside {
+            width: 200px;
+            background-color: blue;
+            float: left;
+        }
+        #content {
+            width: 600px;
+            background-color: brown;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>제목 글자 태그</h1>
+    <p>난 차라리 흘러갈래 모두 높은 곳을 우러러볼 때 난 내 물결을 따라 Flow flow along flow along my way 난 차라리 꽉 눌러붙을래 날 재촉한다면 따뜻한 밥 위에 누워 자는 계란 fry fry 같이 나른하게</p>
+    <div id="header">
+        <h1>hearder 태그</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">#aside 태그</div>
+        <div id="content">#content 태그</div>
+    </div>
+</body>
+</html>

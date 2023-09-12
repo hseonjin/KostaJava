@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\seonjin\Kosta_Java\KostaJava\Kosta_test_sql"/>
 			<item value="D:\seonjin\Kosta_Java\KostaJava\java"/>
 			<item value="D:\seonjin\Kosta_Java\KostaJava\Aug09"/>
 			<item value="D:\seonjin\Kosta_Java\KostaJava"/>
