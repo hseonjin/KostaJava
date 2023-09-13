@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex; /*fex, inline-flex*/
+            flex-direction: row; /*row, column, row-reverse, column-reverse*/
+            flex-wrap: nowrap;
+            justify-content: flex-start; /*flex-start, flex-end, center, space-between, space-around, space-between 등등*/
+            border: 1px solid black;
+        }
+        .item {
+            margin: 3px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .container2 {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid black;
+            align-items: center;
+        }
+        .item2 {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">메뉴 1</div>
+        <div class="item">메뉴 2</div>
+        <div class="item">메뉴 3</div>
+    </div>
+
+    <div class="container2">
+        <label class="item2">hong</label>
+        <p class="item2">seoul</p>
+        <h1 class="item2">title</h1>
+    </div>
+</body>
+</html>

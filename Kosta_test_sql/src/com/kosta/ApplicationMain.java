@@ -36,11 +36,11 @@ public class ApplicationMain {
 		System.out.println(p2);//상품 정보: 코드-P-3, 볼펜, 가격-2900원, 재고-90개
 
 
-//		//3. 주문 추가
-//		int orderNo = shop.order(new Order("홍길동", "P-3", 5));//orderNo = 3
-//		//4. 상품 정보 조회
-//		Goods p3 = shop.findProductByCode("P-3");
-//		//5. 상품 정보 출력
+		//3. 주문 추가
+		int orderNo = shop.order(new Order("홍길동", "P-3", 5)); //orderNo = 3
+		//4. 상품 정보 조회
+		Goods p3 = shop.findProductByCode("P-3");
+		//5. 상품 정보 출력
 //		System.out.println(p3);//상품 정보: 코드-P-3, 볼펜, 가격-2900원, 재고-85개
 //		
 //		System.out.println("------------전체 상품 정보 출력 시작------------");

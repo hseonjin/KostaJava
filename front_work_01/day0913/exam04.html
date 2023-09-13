@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 500px;
+        }
+
+        #top {
+            background-color: rgb(190, 212, 231);
+            text-align: center;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+        #middle {
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        
+        #left {
+            background-color: azure;
+            width: 150px;
+            float: left;
+            margin-right: 20px;
+            border-right: 1px solid black;
+        }
+        #right {
+            background-color: beige;
+            width: 350px;
+            /* float: left;/ */
+        }
+        #bottom {
+            background-color: rgb(228, 228, 110);
+            /* clear: left; */
+            margin-top: 20px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="top">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+    <div id="middle">
+        <div id="left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque natus libero, et aliquid doloribus atque in illum illo sit beatae quis exercitationem pariatur dolorum repudiandae, non reiciendis quae, explicabo expedita.</div>
+        <div id="right">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque natus libero, et aliquid doloribus atque in illum illo sit beatae quis exercitationem pariatur dolorum repudiandae, non reiciendis quae, explicabo expedita.</div>
+    </div>
+    <div id="bottom">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</div>
+
+</body>
+</html>

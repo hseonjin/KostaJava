@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import com.kosta.order.Order;
 
 public class OrderDAO {
-	public Integer insertOrder(Order order) {
+	public int insertOrder(Order order) {
 		Connection conn = DBConnection.getConnection();
 		PreparedStatement pstmt = null;
 		String sql = "insert into orders values(?,?,?,?,?)";

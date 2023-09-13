@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 300px;
+            border: 3px solid black; /* 자식들이 자신의 자리를 찾을 수 있도록*/
+            position: relative;
+        }
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        #red {
+            background-color: red;
+            left: 20px;
+            top: 20px;
+        }
+        #green {
+            background-color: green;
+            right: 20px;
+            top: 20px;
+        }
+        #yellow {
+            background-color: yellow;
+            left: 20px;
+            bottom: 20px;
+        }
+        #blue {
+            background-color: blue;
+            right: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dummy Test</h1>
+    <div id="container">
+        <div class="circle" id="red"></div>
+        <div class="circle" id="green"></div>
+        <div class="circle" id="blue"></div>
+        <div class="circle" id="yellow"></div>
+    </div>
+    <h1>Dummy Test</h1>
+</body>
+</html>

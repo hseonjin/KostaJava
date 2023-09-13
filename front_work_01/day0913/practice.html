@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .title {
+            height: 180px;
+            background-color: orange;
+            text-align: center; 
+            color: white;   
+        }
+        .title_bottom {
+            margin: 0;
+            background-color:  rgb(222, 220, 220);
+            color: black;
+            height: 30px;
+        }
+
+        /*title*/
+        .title>#main_title {
+            font-size: 120px;
+            margin: 0 auto;
+            padding: 5px 0;
+            font-weight: bolder;
+            line-height: 100px;
+        }
+        .title>#sub_title{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .title_bottom>#t_bottom {
+            margin: 0;
+            text-align: center;
+        }
+
+
+        /*content*/
+        .content {
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+        }
+        .left {
+            width: 25%;
+        }
+        .center {
+            background-color: rgb(232, 226, 226);
+            width: 50%;
+        }
+        .right {
+            width: 25%;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+
+        /*left*/
+        .left>#artist {
+            background-color: brown;
+            color: white;
+            margin: 0 auto;
+            padding-left: 10px;
+            height: 40px;
+            font-weight: bold;
+            line-height: 1cm;
+        }
+        .left>#menu {
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+
+        /*center*/
+        .center>#title {
+            background-color: darkblue;
+            color: white;
+            margin: 10px;
+            padding: 5px;
+            font-size: small;
+            font-weight: bold;
+        }
+        .center>#author {
+            padding: 5px;
+            margin: 5px;
+            font-size: small;
+            font-weight: bold;
+            color: darkblue;
+        }
+        .center>#text {
+            padding: 5px;
+            margin: 5px;
+            font-size: smaller;
+            color: darkblue;
+        }
+
+        /*right*/
+        .right > #t1 {
+            color: gray;
+            text-decoration: underline;
+        }
+        .right > #t2 {
+            color: orange;
+            border-bottom: 2px solid orange;
+        }
+        .right > #t3 {
+            margin-bottom: 30px;
+        }
+        .right > #t4 {
+            text-decoration:underline;
+        }
+        .right > #t5 {
+            margin-top: -15px;
+            font-weight: normal;
+        }
+
+        .footer>p {
+            height: 20px;
+            text-align: center;
+            color: white;
+            background-color: darkblue;
+            font-size: small;
+            padding: 3px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <p id="main_title">Musée d'Orsay</p>
+        <p id="sub_title">Musée d'Orsay Musée d'Orsay Musée d'Orsay Musée d'Orsay Musée d'Orsay</p>
+    </div>
+    <div class="title_bottom">
+        <p id="t_bottom">Roval Acadeny of Arts. THE REAL VANGOGH THE ARTIST AND HIS LETTERS</p>
+    </div>
+ 
+    <div class="content">
+        <div class="left">
+            <p id="artist">ARTIST</p>
+            <p id="menu">작가의 작품</p>
+            <p id="menu">작가의 시대</p>
+            <p id="menu">작가의 일생</p>
+
+        </div>
+        <div class="center">
+            <p id="title">피리부는 소년</p>
+            <p id="author">에두아르마네</p>
+            <p id="text">1866 캔버스에 유채, 161*97cm, 파리 오르세 Edouard MANET, Le CH Fifre, H.T, 161*97cm</p>
+
+            <p id="title">고흐의 방</p>
+            <p id="author">빈센트반고흐</p>
+            <p id="text">1889 캔버스에 유채 57.5*74cm, 파리 오르세 Vincent Van GOGH,La Chambre de Van Gogh, HIT, 57.5*74cm</p>
+
+            <p id="title">황색 그리스도가 있는 화가의 자화상</p>
+            <p id="author">폴 고갱</p>
+            <p id="text">1890-1891 캔버스에 유지, 38*46cm, 파리 오르셔 Paul Gauguin
+                Portrait de l'artiste au Paul Gauguin, H/T, 38*46cm</p>
+
+            <p id="title">오페라좌의 관현악단</p>
+            <p id="author">에드가 드가</p>
+            <p id="text">1368-1869 캔버스에 유채 32*46cm 파리 오르세 Edgar Degas, Lorchestre de POpera HIT, 38*46cm</p>
+
+            <p id="title">만종</p>
+            <p id="author">장 프랑수아 밀레</p>
+            <p id="text">1357-1859 캔버스에 유치 55.5*66cm, 파리 오르세 Jean-Franqois Millet., L'Angelus HT, 55.5*66cm</p>
+
+            <p id="title">제비꽃장식을 단 베르트모리조</p>
+            <p id="author">에두아르마네</p>
+            <p id="text">1872 Edouard Manet Berthe Morisot au bouquet de H/T,
+                55*38cm</p>
+        </div>
+        <div class="right">
+            <p id="t1">전세계인들에게</p>
+            <p id="t2">제일 사랑받는</p>
+            <p id="t3">서양미술사의 시대</p>
+            <p id="t4">Workshop Go</p>
+            <p id="t5">Life drowing workshop</p>
+            <p id="t4">Summer exhibition</p>
+            <p id="t5">A-level Summer Exibition</p>
+            <p id="t4">RA collection</p>
+            <p id="t5">RA Collections</p>
+        </div>
+    </div>
+
+    <class class="footer">
+        <p>© 2012 Les Amis du Musée d'Orsay. AIl rights reserved. amis@amis-musee-orsay.org Legal status</p>
+    </class>
+
+
+</body>
+</html>

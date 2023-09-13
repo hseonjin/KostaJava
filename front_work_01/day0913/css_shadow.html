@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            margin-bottom: 20px;
+            padding: 10px 30px;
+            background-color: lightblue;
+        }
+        /* box-shadow : x-position y-position blur spread color
+        x-position: 가로 위치, 양수 오른쪽 그림자, 음수 왼쪽 그림자 (필수)
+        y-position: 세로 위치, 양수 위쪽 그림자, 음수 아래쪽 그림자 (필수)
+        blur: 그림자를 흐릿하게 만듦, 값이 클 수록 흐려짐
+        spread: 양수면 그림자 확장, 음수면 축소
+        color: 그림자 색상 지정   
+        inset: 그림자를 요소의 안쪽에 생성
+        initial: 기본값으로 설정
+        inherit: 부모 요소 값 상속 */
+        .a {
+            box-shadow: 5px 5px;
+        }
+        .b {
+            box-shadow: 5px 5px 5px;
+        }
+        .c {
+            box-shadow: 5px 5px 5px;
+        }
+        .d {
+            box-shadow: 5px 5px 5px 5px;
+        }
+        .e {
+            box-shadow: 5px 5px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+</body>
+</html>
