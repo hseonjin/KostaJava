@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(x,y) { // 함수 정의
+            return x+y;
+        }
+         var s = add(10, 20); // 함수 호출
+         alert(s);var s = add(10, 20); /{return / 함}수
+
+         var sum = add; // 함수를 변수에 저장하여 사용
+         var s2 = sum(100, 200);
+
+         var minus = function(x,y) { // 정의와 변수로 저장을 함께
+            return x-y;
+         }
+        alert(minus(100, 50));
+
+        // 화살표 함수 (java의 lamda식) // 아래 셋 모두 같은 function
+        var multi = function(x,y) {
+            return x*y;
+        }
+        
+        var multi = (x,y) => x*y;
+
+        var multi = (x,y) => { return x*y }; // 중괄호가 들어가는 경우 return 입력 필수
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

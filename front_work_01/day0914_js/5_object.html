@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = {}; // {}로 묶여있는 것은 모두 object 타입
+        alert(typeof a);
+
+        let per = {name:'hong', age:30}; // 객체 내부는 key: value 쌍으로 삽입
+        alert(per.name + ', ' + per.age);
+
+        let per2 = [];
+        alert(typeof pers); // object type이지만 배열, 각기 다른 타입도 묶을 수 있지만 잘 사용하진 않음
+
+        let arr = [10,20,30,40,50];
+        let sum = 0;
+        for(i=0; i<arr.length; i++) {
+            sum += arr[i];
+        }
+        alert(sum);
+
+        let pers = [{name:'hong', age:30, addr:'seoul'},
+                    {name:'kong', age:20, addr:'daegu'},
+                    {name:'gong', age:50, addr:'busan'}];
+        let str = `<table border=1><tr><th>이름</th><th>나이</th><th>주소</th></tr>`;
+        for(i=0; i<pers.length; i++) {
+            str += `<tr><td>${pers[i].name}</td><td>${pers[i].age}</td><td>${pers[i].addr}</td></tr>`;
+        }
+        str += '</table>';
+        document.write(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

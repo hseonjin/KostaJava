@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var narr = [3, 7, 5, 1, 2];
+        // acending
+        // function sort(arr) {
+        //     for (var i = 0; i < arr.length - 1; i++) {
+        //         for (var j = 0; j < arr.length - 1 - i; j++) {
+        //             if (arr[j] > arr[j + 1]) {
+        //                 var temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1] = temp;
+        //             }
+        //         }
+        //     }
+        // }
+        // console.log(narr);
+        // sort(narr);
+        // console.log(narr);
+
+        
+        function sort(arr, compare) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (compare(arr[j], arr[j + 1])>0) { // arr[j] = n, arr[j+1] = m
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        console.log(narr);
+        sort(narr, (n,m) => n-m); // sort(narr, dcompare);
+        console.log(narr);
+        sort(narr, (n,m) => m-n);
+        console.log(narr);
+        
+
+        let pers = [{name:'aong', age:40, addr:'seoul'},
+                    {name:'bong', age:50, addr:'daegu'},
+                    {name:'cong', age:30, addr:'busan'}];
+        sort(pers, (n,m) => n.age - m.age); // var compare=(n, m) => n.age-m.age; 와 같음
+        console.log(pers);
+
+        sort(pers, (p1, p2) => {
+            if(p1.name > p2.name) return 1;
+            else if(p1.name < p2.name) return -1;
+            else return 0;
+        }); // var compare(p1, p2) => p1.age-p2.age;
+        console.log(pers);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

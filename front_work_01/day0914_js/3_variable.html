@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n = 10.5; 
+        alert(typeof n); // 정수, 실수 모두 number type
+
+        let s = 'hong';
+        alert(typeof s); // string type
+
+        let date = new Date();
+        alert(typeof date); // object type
+
+        function sum(x, y) {
+            return x+y;
+        }
+        alert(typeof sum); // function type
+
+        let f = sum;
+        alert(typeof f); // function type
+
+        let b = true;
+        alert(typeof b); // boolean type
+
+        let nl = null;
+        alert(typeof nl); // object type
+
+        // typeof 연산자
+        typeof undefined; // undefined
+        typeof 0; // number
+        typeof 10n; // bigint
+        typeof true; // boolean
+        typeof Date; // object
+        typeof null; // object
+        typeof alert; // function
+        typeof 'banana'; // string
+
+        // typeof 함수 ()
+        typeof('string');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
