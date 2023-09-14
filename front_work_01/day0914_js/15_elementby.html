@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // let inputs = document.getElementsByTagName('age');
+            let inputs = document.getElementsByName('age');
+            let div = document.getElementsByTagName('div'); // ('div')[0]
+
+            for(let input of inputs) {
+                // console.log(input.value + ":" + input.checked);
+                if(input.checked) {
+                    div[0].innerHTML = input.value;
+                }
+            }
+            
+            let genders = document.getElementsByName('gender');
+            for(let gender of genders) {
+                console.log(gender.value);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>나이: </td>
+            <td>
+                <label for="">
+                    <input type="radio", name="age" value="young" checked>18세 미만
+                </label>
+                <label for="">
+                    <input type="radio", name="age" value="mature">18세 이상, 60세 미만
+                </label>
+                <label for="">
+                    <input type="radio", name="age" value="senior">60세 이상
+                </label>
+            </td>
+            
+            <td>성별: </td>
+            <td>
+                <label for="">
+                    <input type="radio", name="gender" value="male" checked>남
+                </label>
+                <label for="">
+                    <input type="radio", name="gender" value="female">여
+                </label>
+            </td>
+        </tr>
+    </table>
+    <div></div>
+</body>
+</html>

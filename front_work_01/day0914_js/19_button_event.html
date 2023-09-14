@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1
+        function buttonClick() {
+            alert("click1");
+        }
+
+        //2
+        window.onload = function() {
+            let btn2 = document.getElementById('button2');
+            btn2.onclick = function() {
+                alert("click2");
+            }
+            //3 
+            button3.onclick = function() {
+                this.textContent = this.textContent + "*";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="buttonClick()">버튼1</button>
+    <button id="button2">버튼2</button>
+    <button id="button3">버튼3</button>
+</body>
+</html>

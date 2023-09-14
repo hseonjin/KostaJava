@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var product = {
+            name: '건조망고',
+            type: '당절임',
+            ingredient: '망고, 설탕, 메타중아환산나트륨, 치자황색소',
+            origin: '필리핀'
+        };
+
+        var n1 = product.name;
+        var n2 = product["name"];
+        console.log(n1);
+        console.log(n2);
+
+        // for in문
+        // 'in 객체'일 경우 앞 변수(i) 는 key
+        // 'in 배열'일 경우 앞 변수(i) 는 index(순서)
+        // key와 value 받아 오기
+        for (var i in product) {
+            console.log(i+':'+product[i])
+        }
+
+        // value만 가져오기
+        var arr = [10,20,30,40,50];
+        for(var i in arr) { // i는 index // 객체가 올 때 i는 key
+            console.log(arr[i]);
+        }
+
+        // for of문 : 배열을 위한 것, 앞 변수 i에는 값 자체가 옴
+        for(var i of arr) { 
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

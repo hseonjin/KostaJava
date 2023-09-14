@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 방법1 key-value 쌍으로 정의
+        var person = {
+            name: '홍길동',
+            age: 30,
+            info: function() { // 메소드
+                return `이름: ${this.name}, 나이: ${this.age}`;
+            }
+        }
+        console.log(person.info());
+
+        // 방법2
+        var user = {
+            name: "John",
+            age: 30,
+            info() { // 단축 구문으로 삽입 가능
+                alert(`이름: ${this.name}, 나이: ${this.age}`);
+            }
+            // sayHi() {
+            //     alert(`${this.name}안녕?`);   
+            // }
+        }
+
+        //객체를 정의하고 함수를 나중에 넣을 수도 있음
+        user.sayHi = function() {
+            alert(`${this.name}님 안녕하세여?`);
+        }
+        user.sayHi();
+        user.info();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handle1() {
+            alert('감사합니다');
+        }
+        function handle2() {
+            alert('다시 한번 감사합니다');
+        }
+        window.onload = function() {
+            // elem.onclick = () => alert("안녕하세요");
+            // 여러개의 함수를 연달아 실행해야할 때 사용하면 좋다
+            elem.addEventListener('click', handle1);
+            elem.addEventListener('click', handle2);
+
+            // elem.addEventListner('click', ()=> alert('안녕하세요'));
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="elem" value="클릭해주세요">
+</body>
+</html>

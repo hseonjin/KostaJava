@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let hs = document.querySelectorAll('h1');
+            
+            for(let h of hs) {
+                h.style.color = 'orange';
+                h.style.backgroundColor = 'red';
+                h.innerHTML = "from Javascript";
+            }
+
+            // id 이용하기
+            // let clock = document.querySelector('#clock');
+            let clock = document.getElementById('clock');
+            setInterval(function() {
+                let now = new Date();
+                clock.innerHTML = now.toString();
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h2 id="clock"></h2>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 문자형으로 형변환 : String(변수)
+        // 숫자형 -> 문자형
+        let n = 10;
+        let sn = String();
+        console.log(typeof sn);
+
+        // boolean형 -> 문자형
+        let b = true;
+        let sb = String(b);
+        console.log(sb);
+        console.log(typeof sb);
+
+        // 숫자로 형변환 : Number(변수)
+        let ns = "123";
+        let nn = Number(ns);
+        console.log(nn);
+        console.log(typeof nn);
+
+        ns = '123z';
+        nn = Number(ns);
+        console.log(nn); // NaN 출력 (문자+숫자 혼합된 경우 형변환x)
+
+        // 불린형 -> 숫자형
+        let bn = Number(b); // b: true -> 1
+        console.log(bn);
+        console.log(typeof bn)
+
+        b = false;
+        bn = Number(b); // b: false -> 0
+        console.log(bn);
+        console.log(typeof bn)
+
+        // 불린형으로 형변환 : Boolean(변수)
+        // 숫자형 -> 불린형
+        let  nb = Boolean(1); // 0이 아닌 모든 숫자는 true로 변환
+        console.log(nb);
+        console.log(typeof nb);
+
+        nb = Boolean(0); // 0값은 false로 변환
+        console.log(nb)
+
+        // 문자형 -> 불린형
+        let ssb = Boolean('hong'); // true
+        console.log(ssb);
+        console.log(typeof ssb);
+        ssb = Boolean('0'); // 문자열은 모두 true (단, 빈문자열이거나 undefined인 경우에는 false)
+        console.log(ssb);
+
+        // 객체와 배열 내부의 문자열인 경우 빈 문자열을 가지는 경우에도 true
+        let obj = {A: 'aaa'};
+        console.log(Boolean(obj));
+        obj = {};
+        console.log(Boolean(obj));
+
+        console.log(boolean(null));
+        let v; // undefined
+        console.log(v); 
+        console.log(Boolean(v)); // false
+        console.log(Boolean(NaN)); // false
+
+        // 형변환 시 false
+        // 숫자 0, null, '', undefined, NaN (주의: '0', ' '는 true로 변환)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

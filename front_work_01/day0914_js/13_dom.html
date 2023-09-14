@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // DOM : Document Object Model
+        window.onload = function() {
+            // document.querySelector('h1').style.backgroundColor='red'; // 선택자
+            document.querySelector('h2').style.color='red';
+            let h1s = document.querySelectorAll('h1');
+            for(var h1 of h1s) {
+                h1.style.backgroundColor='red';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Hello Javascript</h1>
+    <h1>Hello Javascript</h1>
+    <h2>Hello jQuery</h2>
+</body>
+
+<!-- <script>
+    // DOM : Document Object Model
+    document.querySelector('h1').style.backgroundColor='red'; // 처음 나타나는 하나의 요소에만 적용
+    document.querySelector('h2').style.color='red';
+    document.querySelectorAll('h1').style.backgroundColor='red'; // 선택자('h1')을 가진 모든 요소에 적용
+</script> -->
+</html>

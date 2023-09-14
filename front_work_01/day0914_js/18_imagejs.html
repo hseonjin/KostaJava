@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let image = document.getElementById('image');
+            image.src = 'kkomee.jpg';
+            image.width = 300;
+            image.height = 200;
+
+            let div = document.getElementById('div');
+            console.log(div.getAttribute('data-name'));
+        }
+    </script>
+</head>
+<body>
+    <img src="" alt="" id="image">
+    <div id="div" data-name="hong"></div>
+</body>
+</html>
