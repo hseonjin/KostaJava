@@ -56,8 +56,8 @@
     <fullyQualifiedTypeName name="com.kosta.dao.GoodsDAO"/>
     <fullyQualifiedTypeName name="com.kosta.dao.OrderDAO"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="com.kosta.order.Order"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.kosta.dao.DBConnection"/>
 </qualifiedTypeNameHistroy>
