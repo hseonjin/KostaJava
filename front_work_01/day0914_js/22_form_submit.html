@@ -11,12 +11,14 @@
                 let id = document.getElementById("id")
                 if(id.value.trim().length<4) {
                     alert('아이디 오류')
-                    return false; // e.preventDefault(); 
+                    // return false; // e.preventDefault(); 
+                    e.preventDefault(); 
                 }
                 let password = document.getElementById("password");
                 if(password.value.trim().length<4) {
                     alert('비밀번호 오류')
-                    return false;
+                    // return false;
+                    e.preventDefault(); 
                 }
             }
         }

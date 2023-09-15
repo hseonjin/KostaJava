@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <script>
+        $(function() {
+            let maxcount = 100;
+            let curcount = 20;
+            let appendDocument = function() {
+                for(let i=0; i<20;i++) {
+                    $('<h1>Infinity scroll</h1>').appendTo('body'); //body에 앞의 내용을 넣겠다
+                }
+            }
+            appendDocument();
+
+            $(window).scroll(function() {
+                // $(window).scrollTop 스크롤의 위치에 따라 변하는 값 (가변길이, 세로 좌표)
+                // $(window).height 보여지는 화면의 높이
+                // $(document).height 보이지 않는 모든 화면까지 포함된 높이
+
+                let scrollHeight = $(window).scrollTop() + $(window).height(); 
+                let documentHeight = $(document).height(); 
+                if(scrollHeight == documentHeight && curcount < maxcount) {
+                    appendDocument();
+                    curcount += 20;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

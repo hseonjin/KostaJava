@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            btn.onclick = function(e) { // 클릭
+                console.log(e.button);
+            }
+            btn.oncontextmenu = function(e) { // 우클릭
+                console.log(e.button);
+            }
+            btn.onmousedown = function(event) {
+                console.log("Mouse Down");
+            }
+            btn.onmouseup = function(event) {
+                console.log("Mouse Up");
+            }
+            
+            div.onclick = function(event) {
+                // alt, shift 여부
+                if(event.altKey) {
+                    console.log("Enter Alt key");
+                } else if (event.shiftKey) {
+                    console.log("Enter Shift key");
+                } else if (event.ctrlKey) {
+                    console.log("Enter Ctrl key");
+                }
+            }
+            div.ondblclick = function(event) {
+                console.log("double click");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">click</button>
+    <div id="div"></div>
+</body>
+</html>

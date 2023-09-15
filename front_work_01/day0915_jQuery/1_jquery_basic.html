@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <script>
+        // $(document).ready(function() { // window.onload = function(){}
+        // })
+        // js 사용하는 경우
+        // window.onload = function(){
+        //     let hs = document.querySelectorAll('h1');
+            
+        //     for(let h of hs) {
+        //         h.style.color = 'red';
+        //         h.style.backgroundColor = 'black';
+        //     }
+        // }
+
+        $(function() {
+            $('h1').css('color', 'red');
+            $('h1').css('background', 'black');
+
+            // alert($('script').attr('src'));
+            $('p').attr('id', 'test');
+            // $('img').attr('src', 'kkomee.jpg');
+            // $('img').attr('alt', '꽃');
+            // $('img').attr('width', '100');
+
+            // $('img').attr({
+            //     src: 'kkomee.jpg',
+            //     alt: "꽃",
+            //     width: 100
+            //     }
+            // })
+
+            $('img').attr({
+                src: function(index) {
+                    return `kkomee` + (index+1) + '.jpg'
+                },
+                alt: "꼬미",
+                width: function(index) {
+                    return (index+1) * 100;
+                }
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <p></p>
+    <img src="" alt=""><br>
+    <img src="" alt=""><br>
+    <img src="" alt="">
+</body>
+</html>

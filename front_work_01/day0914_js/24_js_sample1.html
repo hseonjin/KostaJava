@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            cursor: pointer;
+            background-color: aliceblue;
+        }
+        .selected {
+            background-color: antiquewhite;
+        }
+    </style>
+    <script>
+        function toggleSelect(li) {
+            li.classList.toggle("selected");
+        }
+        function singleSelect(li) {
+            let selected = ul.querySelectorAll('.selected');
+            for(var elem of selected) {
+                elem.classList.remove('selected');
+            }
+            li.classList.add('selected');
+        }
+
+        window.onload = function() {
+            ul.onclick = function(e) {
+                if(e.target.tagName != "li") return;
+                if(e.ctrlKey) {
+                    toggleSelect(e.target);
+                } else {
+                    singleSelect(e.target)
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    선택하고자 하는 요소를 클릭하세요<br>
+    <ul id="ul">
+        <li class = "selected">React</li>
+        <li>Angular</li>
+        <li>Vue</li>
+        <li>Svelte</li>
+        <li>Blazor</li>
+    </ul>
+</body>
+</html>

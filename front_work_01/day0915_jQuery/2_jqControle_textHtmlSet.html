@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <script>
+        $(function() {
+            $('h1:nth-child(1)').html("<a href='http://naver.com'>네이버</a>"); // html형식으로 출력
+            $('h1:nth-child(2)').text("<a href='http://google.com'>구글</a>"); // text 그자체를 출력
+        })
+
+        // js이용
+        // window.onload = function() {
+        //     document.querySelector('h1:nth-child(1)').textContent = "<a href='http://naver.com'>네이버</a>";
+        //     document.querySelector('h1:nth-child(2)').textContent = "<a href='http://google.com'>구글</a>";
+        // }
+    </script>
+</head>
+<body>
+    <h1>Header - 0</h1>
+    <h1>Header - 1</h1>
+</body>
+</html>

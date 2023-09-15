@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <script>
+        $(function() {
+            $('a').click(function() {
+                e.preventDefault();
+                // return false;
+                alert("click");
+            })
+
+            $('button').click(function(e){
+                e.preventDefault();
+            })
+            $('form').submit(function(e){
+                e.preventDefault();
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <a href="http://kosta.com">코스타</a>
+    <button>버튼</button>
+    <form action="http://kosta.com">
+        <input type="submit" name = "" id="">
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <script>
+        $(function() {
+            // 한글 입력만 받으려고 한다.
+            $('form').submit(function() {
+                var value = $('input').val(); // 첫 번째 input 하나만 가지고 온다
+                if(value.replace(/[a-z|A-Z|0-9]/g, '').length==0) { // 정규표현식, 영어/숫자 허용  
+                    alert('과정을 진행합니다.');
+                } else {
+                    alert('한글 이름을 입력하세요.');
+                    event.preventDefault();
+                }
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <form action="/login">
+        <label for="">이름</label>
+        <input type="text">
+        <input type="submit" name = "" id="">
+    </form>
+</body>
+</html>

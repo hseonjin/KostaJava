@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <script>
+        $(function() {
+            var text = $('div').text(); // text는 여러 개이면 모두 다 들고 옴 (태그 제외 내용만)
+            var html = $('div').html(); // html은 하나만 가져옴 (태그 포함)
+            console.log(text);
+            console.log(html);
+            $('body').append(`<p>text: ${text}</p>`);
+            $('body').append(`<p>html: ${html}</p>`);
+        })
+
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Header - 0</h1>
+    </div>
+    <div>
+        <h1>Header - 1</h1>
+    </div>
+</body>
+</html>
