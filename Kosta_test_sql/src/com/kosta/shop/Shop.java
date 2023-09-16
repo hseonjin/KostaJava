@@ -133,7 +133,7 @@ public class Shop {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			pstmt = conn.prepareCall(sql);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, code);
 			rs = pstmt.executeQuery();
 			if (rs != null && rs.next()) {
@@ -170,14 +170,14 @@ public class Shop {
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs!=null) {
+			if (rs != null) {
 				while (rs.next()) {
 					String code = rs.getString(1);
 					String name = rs.getString(2);
-					Integer price  = rs.getInt(3);
+					Integer price = rs.getInt(3);
 					Integer stock = rs.getInt(4);
-					String category= rs.getString(5);
-					if(category == "1") 
+					String category = rs.getString(5);
+					if (category == "1")
 						goodList.add(new Goods(code, name, price, stock, "정상"));
 					else
 						goodList.add(new Goods(code, name, price, stock, "취소"));
@@ -187,13 +187,15 @@ public class Shop {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(rs!=null) rs.close();
-				if(stmt!=null) stmt.close();
-			} catch(Exception e) {
+				if (rs != null)
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		for(Goods good : goodList) {
+		for (Goods good : goodList) {
 			System.out.println(good);
 		}
 		close(conn);
@@ -205,46 +207,48 @@ public class Shop {
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "select * from orders";
-		try{
+		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs!=null) {
-				while(rs.next()) {
+			if (rs != null) {
+				while (rs.next()) {
 					Integer no = rs.getInt(1);
 					String customer = rs.getString(2);
 					String productcode = rs.getString(3);
-					Integer amount  = rs.getInt(4);
+					Integer amount = rs.getInt(4);
 					boolean iscanceled = rs.getBoolean(5);
 					orderList.add(new Order(no, customer, productcode, amount, iscanceled));
 				}
 			}
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(rs!=null) rs.close();
-				if(stmt!=null) stmt.close();
-			} catch(Exception e) {
+				if (rs != null)
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		for(Order order : orderList) {
+		for (Order order : orderList) {
 			System.out.println(order);
 		}
 		close(conn);
 	}
-	
+
 	public Order findOrderByNo(int orderNo) {
-		Connection conn = null;
+		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Order order = null;
-		String sql = "select * from order where no=?";
+		String sql = "select * from orders where no=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, orderNo);
 			rs = pstmt.executeQuery();
-			if(rs!=null && rs.next()) {
+			if (rs != null && rs.next()) {
 				Integer no = rs.getInt(1);
 				String customer = rs.getString(2);
 				String productcode = rs.getString(3);
@@ -256,7 +260,8 @@ public class Shop {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(pstmt!=null) pstmt.close();
+				if (pstmt != null)
+					pstmt.close();
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
@@ -264,8 +269,64 @@ public class Shop {
 		close(conn);
 		return order;
 	}
-	
+
 	public Order cancelOrder(int orderNo) {
-		
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "update orders set iscanceled=? where no=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, 1); // 0 true, 1 false
+			pstmt.setInt(2, orderNo);
+			pstmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		Order order = findOrderByNo(orderNo);
+		updateProduct(order);
+		close(conn);
+		return order;
+	}
+
+	public void printOrderDetailsByCustomerAndIsCanceled(String customerName, String cancelYN) {
+		Connection conn = getConnection();
+		String sql = "select customer, COUNT(*), SUM(g.price * amount) from orders o join goods g on productcode=g.code where customer=? and iscanceled=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, customerName); 
+			if(cancelYN.equals("정상")) {
+				pstmt.setInt(2, 0);
+				rs = pstmt.executeQuery();
+				if(rs!=null && rs.next()) {
+					String customer = rs.getString(1);
+					Integer count = rs.getInt(2);
+					Integer tot = rs.getInt(3);
+					System.out.println(String.format("%s님의 정상주문 건수는: %d건이고, 정상주문합계금액은: %d원 입니다.",
+							customer, count, tot));			
+				}
+			} 
+			else {
+				pstmt.setInt(2, 1);
+				rs = pstmt.executeQuery();
+				if(rs!=null && rs.next()) {
+					String customer = rs.getString(1);
+					Integer count = rs.getInt(2);
+					Integer tot = rs.getInt(3);
+					System.out.println(String.format("%s님의 취소주문 건수는: %d건이고, 최소주문합계금액은: %d원 입니다.",
+							customer, count, tot));
+				}
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		close(conn);
 	}
 }
