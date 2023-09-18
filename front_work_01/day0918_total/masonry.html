@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #picture {
+            margin:0 auto;
+            width: 80%;
+        }
+        body {
+            background-color: lightgray;
+        }
+        .box {
+            background-color: white;
+            margin: 5px;
+        }
+    </style>
+    <style>
+    #darken-background {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 100%; 
+
+        display: none;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 10000;
+        overflow-y: scroll;
+    }
+
+    #lightbox {
+        width: 700px;
+        margin: 20px auto; padding: 15px;
+
+        border: 1px solid #333333;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 5px 5px rgba(34, 25, 25, 0.4);
+
+        text-align: center;
+    }
+
+    .user-information {  overflow: hidden;  text-align: left; }
+    .user-information-image { float: left; width: 70px; }
+    .user-information-text { float: right; width: 620px;  }
+    .lightbox-splitter { margin: 10px 0; }
+    </style>    
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="jquery.masonry.min.js"></script>
+    <script src="jquery.imagesloaded.min.js"></script>
+    <script>
+        var pictures = ['picture1.jpg', 'picture2.jpg', 'picture3.jpg',
+            'picture4.jpg', 'picture5.jpg', 'picture6.jpg',
+            'picture7.jpg', 'picture8.jpg', 'picture9.jpg', 'picture10.jpg',
+            'picture11.jpg', 'picture12.jpg', 'picture13.jpg',
+            'picture14.jpg', 'picture15.jpg', 'picture16.jpg',
+            'picture17.jpg', 'picture18.jpg', 'picture19.jpg', 'picture20.jpg',
+            'picture21.jpg', 'picture22.jpg', 'picture23.jpg',
+            'picture24.jpg', 'picture25.jpg'];        
+
+        $(function() {
+            for(var i=0; i<25; i++) {
+                let img = $('<img/>').addClass('box').attr('id','picture'+(i+1)).css({padding:10});
+                img.attr('src', './picture/'+pictures[i]);
+                img.attr('width', 180);
+                img.attr('height', 'auto');
+                $('#picture').append(img);
+            }           
+        })
+
+        $(function () {
+            // 이미지 로드 확인
+            $('#picture').imagesLoaded(function () {
+                // jQuery Masonry 플러그인 적용
+                $('#picture').masonry({
+                    itemSelector: '.box',
+                    columnWidth: 110,
+                    isAnimated: true
+                });
+            });  
+        })      
+
+        $(function() {
+            function showLightBox() {
+                // 라이트박스를 보이게 합니다.
+                $('#darken-background').show();
+                $('#darken-background').css('top', $(window).scrollTop());
+                // 스크롤을 못하게 합니다.
+                $('body').css('overflow', 'hidden');
+            }
+
+            function hideLightBox() {
+                // 라이트박스를 안 보이게 합니다.
+                $('#darken-background').hide();
+
+                // 스크롤을 하게 합니다.
+                $('body').css('overflow', '');
+            }
+
+            // 라이트박스 제거 이벤트
+            $('#darken-background').click(function () {
+                hideLightBox($(this));
+            });
+
+              // 클릭 이벤트 연결
+            $('.box').click(function () {
+                $('.selector').attr('src',$(this).attr('src')) ;
+                showLightBox();
+            }); 
+            
+            hideLightBox();
+        })
+    </script>
+</head>
+<body>
+    <div id="picture"></div>
+    <div id="darken-background"> 
+        <div id="lightbox"> 
+            <div class="user-information"> 
+                <a class="user-information-image" href="#">
+                    <img src="http://placekitten.com/70/70" class="selector" width="50" />
+                </a> 
+                <div class="user-information-text">
+                    <h3>User</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem mi, egestas a facilisis eget, egestas ut magna.</p>
+                </div> 
+            </div>
+            <hr class="lightbox-splitter" />
+            <img src="http://placekitten.com/600/750" class="selector" width="700"/> 
+        </div> 
+    </div>     
+</body>
+</html>

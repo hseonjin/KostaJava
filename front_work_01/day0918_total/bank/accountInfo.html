@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <style>
+        h3 {
+            text-align: center;
+        }
+        form {
+            border: 1px solid black;
+            width: 300px;
+            margin: 0 auto;
+        }
+        table {
+            margin: 10px auto;
+        }
+        #left {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #right {
+            padding-left: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>계좌조회</h3>
+
+        <form action="">
+            <table>
+                <tr>
+                    <td id="left"><label for="account">계좌번호</label></td>
+                    <td id="right"><input type="text" name="account" id="account"></td>
+                </tr>
+                <tr>
+                    <td id="left"><label for="name">이름</label></td>
+                    <td id="right"><input type="text" name="name" id="name"></td>
+                </tr>  
+                <tr>
+                    <td id="left"><label for="deposit">입금액</label></td>
+                    <td id="right"><input type="text" name="deposit" id="deposit"></td>
+                </tr>  
+                <tr>
+                    <td id="left"><label for="cate">종류</label></td>
+                    <td id="right"><input type="text" name="cate" id="cate"></td>
+                </tr>  
+                <tr>
+                    <td id="left"><label for="grade">등급</label></td>
+                    <td id="right"><input type="text" name="grade" id="grade"></td>
+                </tr>  
+            </table>
+        </form>
+    </div>
+</body>
+</html>

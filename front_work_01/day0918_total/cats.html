@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <script src="https://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script src="jquery.imagesloaded.min.js"></script>
+    <style>
+        #picture {
+            margin: 0 auto;
+            width: 900px;
+            background-color: rgb(255, 248, 248);
+        }
+        body {
+            background-color: lightgray;
+        }
+        .box {
+            background-color: white;
+            margin: 5px;
+        }
+    </style>
+    <style>
+
+    </style>
+
+    <script>
+        var pictures = ['picture1.jpg', 'picture2.jpg', 'picture3.jpg', 'picture4.jpg', 'picture5.jpg', 
+                        'picture6.jpg', 'picture7.jpg', 'picture8.jpg', 'picture9.jpg', 'picture10.jpg', 'picture11.jpg', 'picture12.jpg', 'picture13.jpg', 'picture14.jpg', 'picture15.jpg', 'picture16.jpg', 'picture17.jpg', 'picture18.jpg', 'picture19.jpg', 'picture20.jpg', 'picture21.jpg', 'picture22.jpg', 'picture23.jpg', 'picture24.jpg', 'picture25.jpg']
+        $(function() {
+            for(var i=0; i<25; i++) {
+                let img = $('<img/>').addClass('box').attr('id', 'picture'+(i+1)).css({padding:10});
+                img.attr('src', './picture/'+pictures[i]);
+                img.attr('width', 180);
+                img.attr('height', 'auto');
+                $('#picture').append(img);
+            }
+
+            $(function() {
+                // 이미지 로드 확인
+                $('#picture').imgesLoaded(function() {
+                    // jQuery masonry 플러그인 적용
+                    $('#picture').masonry({
+                        columnWidth: 110
+                    })
+                });;
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="picture"></div>
+</body>
+</html>

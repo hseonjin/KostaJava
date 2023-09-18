@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC게시판</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <style>
+        h3, h5 {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            width: 800px
+        }
+
+        #tbl_top {
+            background: orange;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        var articleList = [{no:1, title:'제목1', writer:'hong', date:'2023-09-15', count:0},
+                            {no:2, title:'제목2', writer:'song', date:'2023-09-16', count:0},
+                            {no:3, title:'제목3', writer:'gong', date:'2023-09-17', count:0},
+                            {no:4, title:'제목4', writer:'pong', date:'2023-09-18', count:0},
+                            {no:5, title:'제목5', writer:'cong', date:'2023-09-19', count:0}]
+
+        $(function() {
+            // for(var article of articleList) {
+            //      $(`<tr><td>${article.no}</td><td><a href="detailform.html?no=${article.no}">${article.title}</a></td><td>${article.writer}</td><td>${article.date}</td><td>${article.count}</td><td><button>삭제</button></<td></tr>`).appendTo('table>tbody'); // 또는 <table>에 이름지정해서 입력
+            // }
+
+            // 위 코드 가독성 좋게 쓰기
+            for(var article of articleList) {
+                var tr = $('<tr></tr>');
+                var td_no = $(`<td>${article.no}</td>`)
+                var td_title = $(`<td><a href="detailform.html?no=${article.no}">${article.title}</a></td>`);
+                var td_writer = $(`<td>${article.writer}</td>`);
+                var td_date = $(`<td>${article.date}</td>`);
+                var td_count = $(`<td>${article.count}</td>`);
+                var td_delete = $(`<td><button>삭제</button></td>`);
+                tr.append(td_no);
+                tr.append(td_title);
+                tr.append(td_writer);
+                tr.append(td_date);
+                tr.append(td_count);
+                tr.append(td_delete);
+                $('table>tbody').append(tr);
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>글 목록 &nbsp; <a href="writeform.html">글쓰기</a></h3>
+        <h5>
+            <select name="type">
+                <option value="subject">제목</option>
+                <option value="writer">작성자</option>
+                <option value="content">내용</option>
+            </select>
+            <input type="text" name="text" />
+            <input type="submit" value="검색" />
+        </h5>
+        <table>
+            <tr id="tbl_top">
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>조회수</th>
+                <th>삭제</th>
+            </tr>
+        </table> 
+    </div>
+</body>
+
+</html>

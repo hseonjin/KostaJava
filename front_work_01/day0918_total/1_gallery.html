@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
+    <style>
+        div.item:nth-child(1) {background-color: blueviolet;}
+        div.item:nth-child(2) {background-color: pink;}
+        div.item:nth-child(3) {background-color: burlywood;}
+    </style>
+    <script>
+        $(function() {
+            var width = $('[data-role="slider"]').attr('data-width'); // 속성은 '[]', 매개변수 하나: 값 가져오기
+            var height = $('[data-role="slider"]').attr('data-height');
+            var count = $('[data-role="slider"] div.item').length;
+
+            $('[data-role="slider"]').css({
+                position  : 'relative',
+                overflow : 'hidden',
+                width : width,
+                height : height
+            }).find('.container').css({
+                position: 'absolute',
+                width:count*width,
+                overflow:'hidden'
+            }).find('.item').css({
+                width : width,
+                height : height,
+                float : 'left'
+            });
+
+            var currentPage = 0;
+            var changePage = function() {
+                $('[data-role="slider"]>.container').animate({
+                    left : -currentPage*width
+                },500);
+            }
+
+            $('#left-button').click(function () {
+                if(currentPage>0) {
+                    currentPage = currentPage-1;
+                    changePage();
+                }
+            })
+
+            $('#right-button').click(function () {
+                if(currentPage<count-1) {
+                    currentPage = currentPage+1;
+                    changePage();
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div data-role="slider" data-width="500" data-height="300">
+        <div class="container">
+            <div class="item">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+    <button id="left-button">⩤</button>
+    <button id="right-button">⩥</button>
+</body>
+</html>
