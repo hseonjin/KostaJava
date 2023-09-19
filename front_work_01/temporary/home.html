@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>편마카세</title>
+
+    <style>
+        body {
+            margin : 0 auto;
+        }
+        a {
+            text-decoration: none;
+        }
+        .header {
+            background-color: #FBF9F3;
+        }
+        .header_content {
+            padding: 16px 0 9px 0;
+            margin: 0 10%;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .header_content .logo {
+            width: 210px;
+            margin: 17px 0 30px 30px;
+            font-size: 50px;
+        }
+        .header_content .logo > a {
+            color: #FF2E00;
+            text-shadow: 5px 5px 2px#EEC595;
+        }
+
+        .header_content .search {
+            margin: 22px 10px 0 10px;
+            width: 370px;
+        }
+        .header_content .form-search {
+            display: block;
+            width: 100%;
+            border: 2px solid #EEC595;
+            border-radius: 40px;
+            height: 45px;
+            padding: 0 62px 0 20px;
+        }
+        .header_content .circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #EEC595;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <header class="header">
+            <div class="header_content">
+                <div class="container">
+                    <strong class="logo">
+                        <a href="/">편마카세</a>
+                    </strong>
+                    <div class="search">
+                        <input type="text" name="search" class="form-search" value>
+                        <button class="btn btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="signup">
+                        <div class="circle"><a href="" >회원가입</a></div>
+                    </div>
+                    <div class="login">
+                        <div class="circle"><a href="" >로그인</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_bottom">
+            </div>
+
+        </header>
+    </div>
+</body>
+</html>
