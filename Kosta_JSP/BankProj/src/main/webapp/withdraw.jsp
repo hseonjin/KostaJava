@@ -1,65 +1,38 @@
+<%@page import="dto.Account"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js""></script>
-    <style>
-        h3 {
-            text-align: center;
-        }
-        form {
-            border: 1px solid black;
-            width: 300px;
-            margin: 0 auto;
-        }
-        table {
-            margin: 10px auto;
-        }
-        #left {
-            font-weight: bold;
-            text-align: center;
-        }
+	pageEncoding="UTF-8"%>
+<style>
+#label {
+	text-align: center;
+	padding-right: 10px;
+}
+p {
+	text-align: center;
+	margin: 20px 0 10px 0;
+}
+form {
+    border: 1px solid gray;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+</style>
 
-        #right {
-            padding-left: 10px;
-        }
+<% Account acc = (Account) request.getAttribute("acc"); %>
 
-        p {
-            margin: 10px auto;
-            text-align: center;
-        }
-
-        #submit {
-            padding: 0 30px 0 30px;
-            background-color: lightgray;
-            font-weight: bold;
-        }
-        
-
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h3>출금</h3>
-
-        <form action="">
-            <table>
-                <tr>
-                    <td id="left"><label for="account">계좌번호</label></td>
-                    <td id="right"><input type="text" name="account" id="account"></td>
-                </tr>
-                <tr>
-                    <td id="left"><label for="deposit">출금액</label></td>
-                    <td id="right"><input type="text" name="deposit" id="deposit"></td>
-                </tr>  
-            </table>
-            
-            <p><input type="submit" value="출금" id="submit"></p>
-        </form>
-    </div>
-</body>
-</html>
+<div class="container">
+	<h3>출금</h3>
+	<form action="withdraw" method="post">
+		<table>
+			<tr>
+				<td id="label">계좌번호</td>
+				<td><input type="text" name="id" id="id"></td>
+			</tr>
+			<tr>
+				<td id="label">출금액</td>
+				<td><input type="text" name="money" id="money"></td>
+			</tr>
+		</table>
+		<p><input type="submit" value="출금"></p>
+	</form>
+</div>

@@ -4,33 +4,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
+<title>KOSTA_BANK</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<style>h3{text-align:center; margin-top: 200px"</style>
 </head>
 <body>
-<%
-	String ipage = (String)request.getAttribute("page"); // page """"getAttribute"""" parameter가 아님
+<% String ipage = (String)request.getAttribute("page"); %>
+<% String imem = (String) session.getAttribute("id"); %>
+
+<% 
+if(imem == null) { 
+	pageContext.include("header.jsp"); 
+} else {
+	pageContext.include("headerLogin.jsp");
+}
 %>
-    <% pageContext.include("header.jsp"); %>
-    <table style="width:100%;">
-<!--         <thead> -->
-<!--             <tr> -->
-<!--                 <td> -->
-<%--                     <%@ include file = "header.jsp" %> --%>
-<!--                 </td> -->
-<!--             </tr> -->
-<!--         </thead> -->
-        <tbody>
-            <tr>
-                <td>
-                	<% // 페이지가 존재할 때만 (!=null)일 때만 파라미터로 받아온 페이지(ipage의 값) 출력
-                		if(ipage!=null) {
-                			pageContext.include(ipage + ".jsp"); /* 가져올 페이지(header)의 확장자를 입력하지 않았기 때문에 + 해줌 */
-                		}
-                	%>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+
+<div>
+<%
+	if(ipage!=null) { // page라는 이름의 속성값을 ipage에 대입하여 page가 존재하는 경우
+		pageContext.include(ipage + ".jsp"); // 해당 페이지를 포함한다
+	}
+%>
+<h3>KOSTA BANK MAIN</h3>
+</div>
+
 </body>
 </html>

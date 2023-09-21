@@ -28,10 +28,11 @@ public class Main extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("page", request.getParameter("page"));
-		//		response.sendRedirect("main.jsp"); // 방법 1
-		RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp"); // 방법 2
-		dispatcher.forward(request, response);
+		// TODO Auto-generated method stub
+		// 페이지 요청, 응답 main에 forward
+		request.setAttribute("page", request.getParameter("page")); // page라는 이름의 속성에 page라는 이름의 요청 파라미터 값을 저장
+		RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
+		dispatcher.forward(request, response); // main.jsp에서 요청과 응답을 처리하도록 위임
 	}
 
 	/**
