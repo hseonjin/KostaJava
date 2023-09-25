@@ -16,6 +16,7 @@ form {
     padding: 20px;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script>
 	$(function() { // 선택 불가능하게 만드는 설정
 		$("input[name='type']").change(function() {
@@ -28,8 +29,9 @@ form {
 		})
 	});
 </script>
+
 <div class="container">
-<% pageContext.include("header.jsp"); %>
+<jsp:include page="header.jsp"/>
 	<h3>계좌개설</h3>
 	<form action="makeAccount" method="post">
 		<table>
@@ -67,3 +69,5 @@ form {
 		<p><input type="submit" value="개설"></p>
 	</form>
 </div>
+
+<jsp:include page="footer.jsp"/>

@@ -21,7 +21,7 @@ form {
 <% Account acc = (Account) request.getAttribute("acc"); %>
 
 <div class="container">
-<% pageContext.include("header.jsp"); %>
+<jsp:include page="header.jsp"/>
 	<h3>입금</h3>
 	<form action="deposit" method="post">
 		<table>

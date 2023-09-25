@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<jsp:include page="header.jsp"/>
 <body>
-<% pageContext.include("header.jsp"); %>
  <h3><%=request.getAttribute("err") %></h3> <!-- AccountInfo에 의해 에러 메시지 출력 -->
 </body>
 </html>

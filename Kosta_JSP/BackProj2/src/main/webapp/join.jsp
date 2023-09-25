@@ -16,8 +16,9 @@ form {
     padding: 20px;
 }
 </style>
+<jsp:include page="header.jsp"/>
+
 <div class="container">
-<% pageContext.include("header.jsp"); %>
 	<h3>회원가입</h3>
 	<form action="join" method="post">
 		<table>

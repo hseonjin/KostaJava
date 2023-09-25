@@ -6,22 +6,26 @@
 	text-align: center;
 	padding-right: 10px;
 }
+
 p {
 	text-align: center;
 	margin: 20px 0 10px 0;
 }
+
 form {
-    border: 1px solid gray;
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
+	border: 1px solid gray;
+	width: 300px;
+	margin: 0 auto;
+	padding: 20px;
 }
 </style>
 
-<% Account acc = (Account) request.getAttribute("acc"); %>
+<%
+Account acc = (Account) request.getAttribute("acc");
+%>
+<jsp:include page="header.jsp" />
 
 <div class="container">
-<% pageContext.include("header.jsp"); %>
 	<h3>출금</h3>
 	<form action="withdraw" method="post">
 		<table>
@@ -34,6 +38,9 @@ form {
 				<td><input type="text" name="money" id="money"></td>
 			</tr>
 		</table>
-		<p><input type="submit" value="출금"></p>
+		<p>
+			<input type="submit" value="출금">
+		</p>
 	</form>
+
 </div>

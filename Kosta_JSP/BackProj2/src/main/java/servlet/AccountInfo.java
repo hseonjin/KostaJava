@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dto.Member;
+import dto.Account;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class AccountInfo
  */
-@WebServlet("/login")
-public class Login extends HttpServlet {
+@WebServlet("/accountInfo")
+public class AccountInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public AccountInfo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +31,7 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("accountInfoForm.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -41,31 +41,18 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");
-		String password = request.getParameter("password");
 		
 		HttpSession session = request.getSession();
-		Member member = (Member) session.getAttribute("member");
+		Account acc = (Account) session.getAttribute(id);
 		
 		RequestDispatcher dispatcher = null;
-		if (member != null) {
-			if(member.getId().equals(id)) {// 로그인 정상처리
-				if(member.getPassword().equals(password)) {// 로그인 정상처리
-					request.setAttribute("id", id);
-					session.setAttribute("id", id); // 세션에 아이디 값을 저장
-					dispatcher = request.getRequestDispatcher("makeAccount.jsp");
-				} else { // 비밀번호 오류
-					request.setAttribute("err", "비밀번호가 틀립니다");
-					dispatcher = request.getRequestDispatcher("error.jsp");
-				}
-			} else { // 회원가입하지 않음
-				request.setAttribute("err", "아이디가 틀립니다.");
-				dispatcher = request.getRequestDispatcher("error.jsp");
-			}
-		} else { // 회원가입 하지 않음
-			request.setAttribute("err", "회원가입을 해주세요.");
+		if (acc != null) {
+			request.setAttribute("acc", acc);
+			dispatcher = request.getRequestDispatcher("accountInfo.jsp");
+		} else {
+			request.setAttribute("err", "계좌번호가 틀렸습니다.");
 			dispatcher = request.getRequestDispatcher("error.jsp");
 		}
 		dispatcher.forward(request, response);
 	}
-
 }

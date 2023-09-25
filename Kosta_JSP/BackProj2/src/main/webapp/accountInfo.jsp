@@ -19,8 +19,9 @@ form {
 </style>
 
 <% Account acc = (Account) request.getAttribute("acc"); %> <!-- getAttribute는 Object type이므로 캐스팅 요구 -->
-<% pageContext.include("header.jsp"); %>
 <div class="container">
+<jsp:include page="header.jsp"/>
+
 	<h3>계좌조회</h3>
 	<table>
 		<tr>
@@ -43,5 +44,5 @@ form {
 			<td id="label">등급</td>
 			<td><input type="text" name="type" id="type" value=<%=acc.getGrade() %> disabled></td>
 		</tr>
-	</table>
+	</table>	
 </div>

@@ -22,8 +22,8 @@ tr, td {
 
 <% List<Account> accs = (List<Account>) request.getAttribute("accs"); %>
 
+<jsp:include page="header.jsp"/>
 <div class="container">
-<% pageContext.include("header.jsp"); %>
     <h3>전체 계좌 조회</h3>
     <table>
        <tr id="tbl_top">
