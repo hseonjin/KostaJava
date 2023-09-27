@@ -5,7 +5,6 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import dto.JdbcUtil;
 import dto.Member;
 
 public class MemberDAO {
