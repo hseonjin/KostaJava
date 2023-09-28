@@ -63,7 +63,6 @@ public class MemberDAO {
 				if(pstmt!=null) pstmt.close();
 			} catch (Exception e) {
 				e.printStackTrace();
-				// TODO: handle exception
 			}
 		}
 		JdbcUtil.close(conn);

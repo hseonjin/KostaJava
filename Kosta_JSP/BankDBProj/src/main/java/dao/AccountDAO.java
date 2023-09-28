@@ -15,7 +15,7 @@ public class AccountDAO {
 		String sql = "insert into account values(?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,  acc.getId());
+			pstmt.setString(1, acc.getId());
 			pstmt.setString(2, acc.getName());
 			pstmt.setInt(3, acc.getBalance());
 			pstmt.setString(4, acc.getType());
