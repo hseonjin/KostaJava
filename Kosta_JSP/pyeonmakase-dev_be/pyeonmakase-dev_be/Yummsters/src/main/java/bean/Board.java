@@ -11,27 +11,15 @@ public class Board {
     private String content; // 토스트 에디터로 작성한 레시피 내용
     private Integer recommand_count; // 추천(recommand) 수
     private List<Store_category> store_categoryList;
-    private Food_category food_category;
+    //private Food_category food_category;
 
-    private LocalDateTime createdAt; // 레시피 생성 일자
-    private LocalDateTime modifiedAt; // 레시피 수정 일자
+    private LocalDateTime regdate; // 레시피 생성 일자
+    private LocalDateTime moddate; // 레시피 수정 일자
 
     // 매핑
     private String nickname; // 작성자
     private Integer food_category_id; // 음식 카테고리
-
-    // 생성자
-    public Board(){};
-
-    public Board(String title, String picture, String content, Integer recommand_count, List<Store_category> store_categoryList, Food_category food_category) {
-        this.title = title;
-        this.picture = picture;
-        this.content = content;
-        this.recommand_count = recommand_count;
-        this.store_categoryList = store_categoryList;
-        this.food_category = food_category;
-    }
-
+    
 	public Integer getBoard_id() {
 		return board_id;
 	}
@@ -80,28 +68,20 @@ public class Board {
 		this.store_categoryList = store_categoryList;
 	}
 
-	public Food_category getFood_category() {
-		return food_category;
+	public LocalDateTime getRegdate() {
+		return regdate;
 	}
 
-	public void setFood_category(Food_category food_category) {
-		this.food_category = food_category;
+	public void setRegdate(LocalDateTime regdate) {
+		this.regdate = regdate;
 	}
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
+	public LocalDateTime getModdate() {
+		return moddate;
 	}
 
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public LocalDateTime getModifiedAt() {
-		return modifiedAt;
-	}
-
-	public void setModifiedAt(LocalDateTime modifiedAt) {
-		this.modifiedAt = modifiedAt;
+	public void setModdate(LocalDateTime moddate) {
+		this.moddate = moddate;
 	}
 
 	public String getNickname() {

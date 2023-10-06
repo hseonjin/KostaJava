@@ -15,4 +15,8 @@ public interface BoardService {
 	
 	// 검색
 	Map<String, Object> boardSearch(String type, String keyword, Integer page) throws Exception;
+	// 좋아요 (수, 클릭 여부)
+	String boardLike(String id, Integer num) throws Exception;
+	// 특정 멤버의 좋아요 체크 여부
+	Boolean isBoardLike(String id, Integer num) throws Exception;
 }

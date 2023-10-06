@@ -16,4 +16,14 @@ public interface BoardDAO {
 	// 검색
 	Integer searchBoardCount(Map<String, Object> param) throws Exception;
 	List<Board> searchBoardList(Map<String,Object> param) throws Exception;
+	// 조회수
+	void updateBoardViewCount(Integer num) throws Exception;
+	// 좋아요
+	Integer selectBoardLike(Map<String, Object> param) throws Exception;
+	void insertBoardLike(Map<String, Object> param) throws Exception;
+	void deleteBoardLike(Map<String, Object> param) throws Exception;
+	
+	Integer selectLikeCount(Integer num) throws Exception;
+	void plusBoardLikeCount(Integer num) throws Exception;
+	void minusBoardLikeCount(Integer num) throws Exception;
 }

@@ -8,4 +8,7 @@ public interface MemberService {
 	
 	// 회원가입
 	void join(Member member) throws Exception;
+
+	// 아이디 중복체크
+	String isCheckId(String id) throws Exception;
 }

@@ -1,5 +1,8 @@
 package service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import dao.MemberDAO;
 import dao.MemberDAOImpl;
 import dto.Member;
@@ -27,5 +30,14 @@ public class MemberServiceImpl implements MemberService{
 		if(mem != null) throw new Exception("아이디 중복 오류");
 		memberDAO.insertMember(member);
 	}
+
+	// 아이디 중복 체크
+	@Override
+	public String isCheckId(String id) throws Exception {
+		Member member = memberDAO.selectMember(id);
+		if(member==null) return "notexist";
+		return "exist";
+	}
+
 
 }

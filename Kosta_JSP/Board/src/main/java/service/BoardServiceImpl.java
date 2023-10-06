@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
+
 import dao.BoardDAO;
 import dao.BoardDAOImpl;
 import dto.Board;
@@ -51,6 +53,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public Board boardDetail(Integer num) throws Exception {
+		boardDAO.updateBoardViewCount(num);
 		return boardDAO.selectBoard(num);
 	}
 
@@ -98,6 +101,46 @@ public class BoardServiceImpl implements BoardService {
 		map.put("type", type);
 		map.put("keyword", keyword);
 		return map;
+	}
+
+	@Override
+	public String boardLike(String id, Integer num) throws Exception {
+		Map<String, Object> param = new HashMap<>(); // String과 Integer를 가져오기 때문에 Object로!
+		param.put("id", id); // mapper에 지정한 값과 이름이 같아야 함
+		param.put("num", num);
+		
+		// 1. boardlike 테이블에 데이터 있는지 확인(member_id, num)
+		Integer likenum = boardDAO.selectBoardLike(param);
+		Map<String, Object> res = new HashMap<>();
+		
+		// 2. 있으면 boardlike 삭제, 없으면 boardlike 삽입
+		// 3. board 테이블에 좋아요 수 조정 (삭제-1, 삽입+1)
+		if(likenum==null) { // 없으면
+			boardDAO.insertBoardLike(param); // boardlike에 삽입
+			boardDAO.plusBoardLikeCount(num); // board 테이블에 좋아요 수 증가 likenum 또는 num 가능
+			res.put("select",  true);
+		} else {
+			boardDAO.deleteBoardLike(param);
+			boardDAO.minusBoardLikeCount(num);
+			res.put("select", false);
+		}
+		// 4. 좋아요 수 리턴
+		Integer likecount = boardDAO.selectLikeCount(num);
+		res.put("likecount", likecount);
+		
+		JSONObject jsonObj = new JSONObject(res);
+		
+		return jsonObj.toJSONString();
+	}
+
+	@Override
+	public Boolean isBoardLike(String id, Integer num) throws Exception {
+		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("id", id);
+		param.put("num", num);
+		Integer likenum = boardDAO.selectBoardLike(param);
+		if(likenum==null) return false;
+		return true;
 	}
 
 	

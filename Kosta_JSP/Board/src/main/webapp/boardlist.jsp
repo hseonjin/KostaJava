@@ -50,6 +50,7 @@ table {border: 1px solid gray;}
 <script>
 	
 	function callBtn(num) {
+		var keyword = $("#keyword").val();
 		if(keyword!=null && keyword.trim()!='') {
 			$('#page').val(num);
 			$('#searchform').submit();
@@ -57,6 +58,7 @@ table {border: 1px solid gray;}
 	}
 </script>
 
+	
 </head>
 
 <body>
