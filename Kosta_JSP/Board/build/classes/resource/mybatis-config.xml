@@ -12,9 +12,16 @@
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC"/>
-  			<dataSource type="JNDI">
-				<property name="data_source" value="java:comp/env/jdbc/kosta"/>
-			</dataSource>
+			      <dataSource type="POOLED">
+			        <property name="driver" value="org.mariadb.jdbc.Driver"/>
+			        <property name="url" value="jdbc:mariadb://localhost:3307/kotest"/>
+			        <property name="username" value="root"/>
+			        <property name="password" value="mimi2818"/>
+			      </dataSource>	
+			
+<!--   			<dataSource type="JNDI"> -->
+<!-- 				<property name="data_source" value="java:comp/env/jdbc/kosta"/> -->
+<!-- 			</dataSource> -->
    		</environment>
 	</environments>
 	

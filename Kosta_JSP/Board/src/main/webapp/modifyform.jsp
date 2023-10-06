@@ -39,32 +39,35 @@
 </head>
 
 <body>
+<jsp:include page="main.jsp"/>
     <div class="container">
         <h2>게시판글수정</h2>
-        <form action="/boardmodify" method="post">
+        <form action="boardmodify" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="num" value="${board.num }"/>
             <table>
                 <tr>
                     <td id="left"><label for="writer">글쓴이</label></td>
-                    <td id="right"><input type="text" name="writer" id="writer"></td>
+                    <td id="right"><input type="text" name="writer" id="writer" value="${board.writer }" readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td id="left"><label for="title">제 목</label></td>
-                    <td id="right"><input type="text" name="title" id="title"></td>
+                    <td id="right"><input type="text" name="title" id="title" value="${board.subject }"></td>
                 </tr>
                 <tr>
                     <td id="left"><label for="content">내 용</label></td>
-                    <td><textarea id="content" name="content" cols="40" rows="15"></textarea></td>
+                    <td><textarea id="content" name="content" cols="40" rows="15">${board.content }</textarea></td>
                 </tr>
                 <tr>
-                    <td id="left"><label for="writer">이미지</label></td>
-                    <td><img src="/day0918_total/kkomee1.jpg" alt="" width="100" height="100"></td>
+                    <td id="left"><label for="writer">이미지 파일 첨부</label></td>
+                    <td id="right"><input type="file" name="file" id="file" accept="image/*"></td>
                 </tr>
+                
             </table>
-        </form>
         <div id="btn">
-            <input type="submit" value="수정">
-            <a href="boardlist.jsp">목록</a>
+            <input type="submit" value="수정">&nbsp;&nbsp;
+            <a href="boardlist">목록</a>
         </div>
+        </form>
 
     </div>
 </body>

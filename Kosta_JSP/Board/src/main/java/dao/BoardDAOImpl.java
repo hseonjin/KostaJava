@@ -1,6 +1,8 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -25,7 +27,34 @@ public class BoardDAOImpl implements BoardDAO{
 	public Integer selectBoardCount() throws Exception {
 		return sqlSession.selectOne("mapper.board.selectBoardCount") ;
 	}
-	
-	
-	
+
+	@Override
+	public Board selectBoard(Integer num) throws Exception {
+		return sqlSession.selectOne("mapper.board.selectBoard", num);
+	}
+
+	@Override
+	public void updateBoard(Board board) throws Exception {
+		sqlSession.update("mapper.board.updateBoard", board);
+		sqlSession.commit();
+	}
+
+	@Override
+	public void deleteBoard(Integer num) throws Exception {
+		sqlSession.delete("mapper.board.deleteBoard", num);
+		sqlSession.commit();
+	}
+
+	// 검색
+	@Override
+	public List<Board> searchBoardList(Map<String, Object> param) throws Exception {
+		return sqlSession.selectList("mapper.board.searchBoardList", param);		
+	}
+
+	@Override
+	public Integer searchBoardCount(Map<String, Object> param) throws Exception {
+		return sqlSession.selectOne("mapper.board.searchBoardCount", param);
+	}
+
+
 }
