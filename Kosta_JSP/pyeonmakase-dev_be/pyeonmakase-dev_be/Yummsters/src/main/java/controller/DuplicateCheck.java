@@ -31,29 +31,31 @@ public class DuplicateCheck extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
-		String nickname = request.getParameter("nickname"); // ajax로부터 받은 데이터
-		String email = request.getParameter("email");
-		String id = request.getParameter("id");
+	    response.setCharacterEncoding("UTF-8");
+	    String type = request.getParameter("type"); // 중복 확인 유형 (nickname, email, id)
+	    String value = request.getParameter("value"); // ajax로부터 받은 데이터
 
-		try {
-			MemberService service = new MemberServiceImpl();
-			String isIdCheck = service.isIdCheck(id);
-			String isEmailCheck = service.isEmailCheck(email);
-			String isNicknameCheck = service.isNicknameCheck(nickname);
+	    try {
+	        MemberService service = new MemberServiceImpl();
+	        String isCheck = "";
 
-			JSONObject result = new JSONObject();
-			result.put("id", isIdCheck);
-			result.put("email", isEmailCheck);
-			result.put("nickname", isNicknameCheck);
+	        // 중복 확인 유형에 따라 필요한 메서드 호출
+	        if ("nickname".equals(type)) {
+	            isCheck = service.isNicknameCheck(value);
+	        } else if ("email".equals(type)) {
+	            isCheck = service.isEmailCheck(value);
+	        } else if ("id".equals(type)) {
+	            isCheck = service.isIdCheck(value);
+	        }
 
-			// json 결과 전송
-			response.getWriter().print(result.toString());
+	        // JSON 결과 전송
+	        JSONObject result = new JSONObject();
+	        result.put(type, isCheck);
+	        response.getWriter().print(result.toString());
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			response.getWriter().print("error!");
-		}
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        response.getWriter().print("error!");
+	    }
 	}
-
 }

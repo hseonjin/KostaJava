@@ -4,6 +4,7 @@ public class Board_Store {
 	private Integer board_store_id;
 	private Integer board_id;
 	private Integer store_category_id;
+	
 	public Integer getBoard_store_id() {
 		return board_store_id;
 	}

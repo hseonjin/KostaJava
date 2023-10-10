@@ -19,7 +19,26 @@ public class Board {
     // 매핑
     private String nickname; // 작성자
     private Integer food_category_id; // 음식 카테고리
+    private Integer store_category_id;
+    private String store_category_name; // 편의점명    
     
+    
+	public Integer getStore_category_id() {
+		return store_category_id;
+	}
+
+	public void setStore_category_id(Integer store_category_id) {
+		this.store_category_id = store_category_id;
+	}
+
+	public String getStore_category_name() {
+		return store_category_name;
+	}
+
+	public void setStore_category_name(String store_category_name) {
+		this.store_category_name = store_category_name;
+	}
+
 	public Integer getBoard_id() {
 		return board_id;
 	}

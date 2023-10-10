@@ -133,6 +133,19 @@
         }
 
     </style>
+    <script>
+    $(function() {
+    	$("#searchBtn").click(function() {
+		var keyword = $("#search").val().trim(); // 값을 추출하여 앞뒤 공백제거 후 저장
+        // 2글자 이상 입력, 공백 입력 방지
+        if (keyword.length < 2 || /^\s+$/.test(keyword)) {
+        	$("#search").val("").attr("placeholder", "검색어를 2글자 이상 입력해주세요.");
+            return;
+        }
+		window.location.href = "search?keyword=" + keyword;
+    	});
+	});
+	</script>
 </head>
 
 <body>
@@ -143,8 +156,8 @@
             <a href="./" style="display: inline;"><span>편마카세</span></a>
         </div>
         <div class="search">
-            <input type="text" placeholder="&nbsp;&nbsp;레시피 검색">
-            <img src="imgView?file=searching.png" alt="My Image">
+            <input type="text" id="search" name="search" placeholder="레시피 검색">
+            <img src="imgView?file=searching.png" id="searchBtn" alt="My Image">
         </div>
         <nav>
         <c:choose>
@@ -166,9 +179,9 @@
     </div>
     <div class="foodCategory">
         <ul>
-            <li><a href="#">식사류</a></li>
-            <li><a href="#">간식류</a></li>
-            <li><a href="#">음료</a></li>
+            <li><a href="mainlist?foodId=1">식사류</a></li>
+            <li><a href="mainlist?foodId=2">간식류</a></li>
+            <li><a href="mainlist?foodId=3">음료</a></li>
         </ul>
         <hr>
     </div>
